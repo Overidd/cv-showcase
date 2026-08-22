@@ -3,7 +3,13 @@
   margin-bottom: var(--cv-spacing-section);
 } */
 
-.sumary-paragraph {
+.summary {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-size-item) 0;
+}
+
+.summary__paragraph {
   margin: 0;
   padding: 0;
 

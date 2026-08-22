@@ -10,14 +10,14 @@ export const Summary = ({
 
   return (
     <section
-      className='sumary'
+      className='summary'
     >
       {
         contents.display && (
           contents.data?.map(({ id, value }) => (
             <p
               key={id}
-              className='sumary-paragraph paragraph'
+              className='summary__paragraph paragraph'
             >
               {value}
             </p>
