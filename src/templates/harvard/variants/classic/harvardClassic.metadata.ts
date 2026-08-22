@@ -1,8 +1,8 @@
 import type {
-  Theme
-} from '@/core/interface';
+  ThemeConfigCSS
+} from '@/core/config';
 
-export const defaultTheme: Theme = {
+export const defaultTheme: ThemeConfigCSS = {
   typography: {
     // Harvard clásico suele funcionar muy bien con una serif tradicional.
     fontFamily: 'Calibri',
@@ -35,7 +35,7 @@ export const defaultTheme: Theme = {
 
     text: '#111827',
 
-    muted: '#6B7280',
+    muted: '#b9b9b9',
 
     background: '#FFFFFF',
 

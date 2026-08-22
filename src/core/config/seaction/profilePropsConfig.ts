@@ -2,18 +2,21 @@ import type {
   FieldConfig,
   FieldChildrenConfig,
   VariantConfig,
-  VariantFieldConfig
 } from '@/core/interface';
 
 //  Profile
 export interface ProfilePropsConfig<
   TChildren extends Array<FieldChildrenConfig> = Array<FieldChildrenConfig>
 > {
-  photo: VariantFieldConfig<readonly string[]>;
+  photo: FieldConfig & {
+    variant: VariantConfig<readonly string[]>;
+  };
 
-  name: VariantFieldConfig<readonly string[]>;
+  name: FieldConfig<React.ReactNode> & {
+    variant: VariantConfig<readonly string[]>;
+  };
 
-  title: FieldConfig;
+  title: FieldConfig<React.ReactNode>;
 
   contact: FieldConfig & {
     variant?: VariantConfig<readonly string[]>;
@@ -21,7 +24,6 @@ export interface ProfilePropsConfig<
     children: TChildren;
   };
 }
-// type ProfileProps = InferProfileProps<typeof profileConfig.props>;
 
 export function defineVariant<const TOptions extends readonly string[]>(
   variant: VariantConfig<TOptions>

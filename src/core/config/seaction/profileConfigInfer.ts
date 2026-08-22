@@ -3,45 +3,47 @@ import type {
   FieldConfig,
   FieldProps,
   VariantConfig,
-  VariantFieldConfig,
-  VariantFieldProps,
 } from '@/core/interface';
+import type React from 'react';
 
-export type InferFieldProps<T> =
+export type InferFieldProps<T, FieldValue = React.ReactNode> =
   T extends FieldConfig
-  ? FieldProps<T['value']>
+  ? FieldProps<FieldValue>
   : never;
-
 
 export type InferVariant<T> =
   T extends VariantConfig<infer TOptions>
   ? TOptions[number]
   : never;
 
-
-export type InferVariantFieldProps<T> =
-  T extends VariantFieldConfig<infer TOptions>
-  ? VariantFieldProps<
-    TOptions[number],
-    T['value']
-  >
+export type InferVariantFieldProps<T, FieldValue = React.ReactNode> =
+  T extends FieldConfig & {
+    variant: VariantConfig<infer TOptions>;
+  }
+  ? FieldProps<FieldValue> & {
+    variant: TOptions[number];
+  }
   : never;
-
 
 export type InferProfileProps<
   T extends {
-    name: VariantFieldConfig<readonly string[]>;
-    title: FieldConfig;
+    name: FieldConfig & {
+      variant: VariantConfig<readonly string[]>;
+    };
+
+    title: FieldConfig<React.ReactNode>;
 
     contact: FieldConfig & {
       variant?: VariantConfig<readonly string[]>;
       children: Array<FieldChildrenConfig>;
     };
 
-    photo: VariantFieldConfig<readonly string[]>;
+    photo: FieldConfig & {
+      variant: VariantConfig<readonly string[]>;
+    };
   }
 > = {
-  name: InferVariantFieldProps<T['name']>;
+  name: InferVariantFieldProps<T['name'], React.ReactNode>;
 
   title: InferFieldProps<T['title']>;
 
@@ -53,5 +55,5 @@ export type InferProfileProps<
     children: T['contact']['children'];
   };
 
-  photo: InferVariantFieldProps<T['photo']>;
+  photo: InferVariantFieldProps<T['photo'], string>;
 };

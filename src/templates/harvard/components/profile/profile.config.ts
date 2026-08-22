@@ -67,7 +67,7 @@ export const profileProps = {
 
       {
         key: 'additionalLink',
-        value: '',
+        value: 'https://github.com/Overidd',
         isChangeDisplay: true,
         display: true,
       },
@@ -81,14 +81,14 @@ export const profileProps = {
 
       {
         key: 'birthdate',
-        value: '',
+        value: '12-08-1999',
         isChangeDisplay: true,
         display: true,
       },
 
       {
         key: 'nationality',
-        value: '',
+        value: 'Perú',
         isChangeDisplay: true,
         display: true,
       },

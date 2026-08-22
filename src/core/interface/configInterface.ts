@@ -36,6 +36,6 @@ export type VariantConfig<TOptions extends readonly string[]> = {
 /**
  * Campo que requiere una variante.
  */
-export type VariantFieldConfig<TOptions extends readonly string[], TValue = string> = FieldConfig<TValue> & {
-  variant: VariantConfig<TOptions>;
-};
+// export type VariantFieldConfig<TOptions extends readonly string[], TValue = string> = FieldConfig<TValue> & {
+//   variant: VariantConfig<TOptions>;
+// };
