@@ -50,3 +50,35 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+/* Temporal */
+.cv-harvard-decorator {
+
+  /* Identity */
+  --font-size-identiy-name: calc(22pt * var(--cv-font-scale) * var(--cv-heading-scale));
+
+  --font-size-title: calc(14.67pt * var(--cv-font-scale));
+
+  /* Sections */
+  --font-size-section-name: 15pt;
+
+  /* Content */
+  --font-size-item: calc(13pt * var(--cv-font-scale));
+  --icon-size-item: calc(1.1rem * var(--cv-font-scale));
+
+  /* Space */
+  --space-size-item: calc(0.5rem + var(--cv-spacing-item));
+
+  font-family: var(--cv-font-family);
+}
+
+
+.paragraph {
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+
+  max-width: 100%;
+}
+
+/* font-size: calc(var(--font-size-body) * var(--cv-font-scale)); */

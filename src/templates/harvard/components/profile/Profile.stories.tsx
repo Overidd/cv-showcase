@@ -1,12 +1,21 @@
-import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Profile } from './Profile';
-import { withHarvardTheme } from '../../variants/classic';
-import { profileConfig, type ProfileProps } from './profile.config';
+import type {
+  Meta,
+  StoryObj
+} from '@storybook/react-vite';
+
+import {
+  withHarvardTheme
+} from '../../variants/classic';
+
+import {
+  profileDefinition,
+  type ProfileProps
+} from '.';
 
 const meta = {
-  title: 'Templates/Harvard/Profile',
+  title: 'Templates/Harvard/Classic/Profile',
 
-  component: Profile,
+  component: profileDefinition.component,
 
   tags: ['autodocs'],
 
@@ -15,7 +24,8 @@ const meta = {
   },
 
   decorators: [withHarvardTheme],
-} satisfies Meta<typeof Profile>;
+
+} satisfies Meta<typeof profileDefinition.component>;
 
 export default meta;
 
@@ -24,28 +34,28 @@ type Story = StoryObj<typeof meta>;
 //* Configuración base
 const baseArgs: ProfileProps = {
   name: {
-    value: profileConfig.props.name.value,
-    variant: profileConfig.props.name.variant.value,
-    display: profileConfig.props.name.display
+    value: '',
+    variant: profileDefinition.schema.name.variant.value,
+    display: profileDefinition.schema.name.display
   },
 
   title: {
-    value: profileConfig.props.title.value,
-    display: profileConfig.props.title.display
+    value: '',
+    display: profileDefinition.schema.title.display
   },
 
   contact: {
-    variant: profileConfig.props.contact.variant?.value,
+    variant: profileDefinition.schema.contact.variant?.value,
 
-    display: profileConfig.props.contact.display,
+    display: profileDefinition.schema.contact.display,
 
-    children: profileConfig.props.contact.children,
+    children: profileDefinition.schema.contact.children,
   },
 
   photo: {
-    value: profileConfig.props.photo.value,
-    variant: profileConfig.props.photo.variant.value,
-    display: profileConfig.props.photo.display,
+    value: profileDefinition.schema.photo.value,
+    variant: profileDefinition.schema.photo.variant.value,
+    display: profileDefinition.schema.photo.display,
   },
 };
 
@@ -128,6 +138,12 @@ export const PhotoVariantSquare: Story = {
       ...baseArgs.photo,
       variant: 'square',
     },
+
+    title: {
+      ...baseArgs.title,
+      value: 'Senior Frontend Software Engineer',
+      display: false
+    }
   },
 };
 
@@ -146,6 +162,11 @@ export const PhotoVariantCircular: Story = {
       ...baseArgs.photo,
       variant: 'circular',
     },
+
+    title: {
+      ...baseArgs.title,
+      value: 'Senior Frontend Software Engineer'
+    }
   },
 };
 

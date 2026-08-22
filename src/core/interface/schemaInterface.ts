@@ -1,15 +1,33 @@
 // Base field
-export interface FieldConfig<TValue = string> {
+export interface Field<TValue = string> {
+  value?: TValue;
+  display: boolean;
+  isChangeDisplay: boolean;
+}
+
+// CollectionConfig
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+export interface FieldCollection<TValue = string> {
+  display: boolean;
+  isChangeDisplay: boolean;
+  data?: Array<{
+    id: string,
+    value: React.ReactNode,
+  }>;
+}
+
+export interface FieldItemChildren<TValue = string> {
+  key: string;
   value: TValue;
   display: boolean;
   isChangeDisplay: boolean;
 }
 
-export interface FieldChildrenConfig<TValue = string> {
-  key: string;
-  value: TValue;
+export interface FieldChildren<TValue = string> {
   display: boolean;
   isChangeDisplay: boolean;
+
+  children: Array<FieldItemChildren<TValue>>
 }
 
 
@@ -39,3 +57,9 @@ export type VariantConfig<TOptions extends readonly string[]> = {
 // export type VariantFieldConfig<TOptions extends readonly string[], TValue = string> = FieldConfig<TValue> & {
 //   variant: VariantConfig<TOptions>;
 // };
+
+export function defineVariant<const TOptions extends readonly string[]>(
+  variant: VariantConfig<TOptions>
+): VariantConfig<TOptions> {
+  return variant;
+}

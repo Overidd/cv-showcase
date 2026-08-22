@@ -1,6 +1,6 @@
 import type {
   CSSVariables
-} from '../type';
+} from '@/core/type';
 
 import type {
   ThemeConfigCSS

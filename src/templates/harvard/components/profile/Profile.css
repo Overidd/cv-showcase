@@ -1,14 +1,7 @@
-:root {
-  --font-size-name: 22pt;
-  --font-size-subtitle: 14.67pt;
-  --font-size-item: 11pt;
-}
-
-.profile {
-  margin-bottom: var(--cv-spacing-component);
-  font-family: var(--cv-font-family);
-
-}
+/* ! */
+/* .profile {
+  margin-bottom: var(--cv-spacing-section);
+} */
 
 /* Photo */
 .photo {
@@ -20,6 +13,7 @@
   margin: 0 auto;
   overflow: hidden;
 
+  /*!  */
   margin-bottom: calc(var(--cv-spacing-component));
 
   /* Photo - Variants */
@@ -43,16 +37,20 @@
 
 /* Profile Header */
 .profile-header__identity {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  gap: calc(var(--space-size-item) - 5px) 0;
 
   /* Name */
   .name {
     margin: 0;
     padding: 0;
     color: var(--cv-color-primary);
-    font-size: calc(var(--font-size-name) * var(--cv-font-scale) * var(--cv-heading-scale));
+    font-size: var(--font-size-identiy-name);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 0.5;
 
     /* Name - Variants */
     &.name--uppercase {
@@ -67,7 +65,7 @@
   & p {
     margin: var(--cv-spacing-item) 0 0;
     color: var(--cv-color-secondary);
-    font-size: calc(var(--font-size-subtitle) * var(--cv-font-scale));
+    font-size: var(--font-size-title);
     line-height: var(--cv-line-height);
   }
 }
@@ -78,8 +76,10 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  gap: calc(7px + var(--cv-spacing-item));
 
+  gap: calc(var(--space-size-item) - 10px) var(--space-size-item);
+
+  /*!  */
   margin-top: var(--cv-spacing-component);
 
   /* Contact Info - List */
@@ -115,8 +115,8 @@
 
     /* Contact Item - Icon */
     & .contact-item__icon {
-      width: calc(1.1rem * var(--cv-font-scale));
-      height: calc(1.1rem * var(--cv-font-scale));
+      width: var(--icon-size-item);
+      height: var(--icon-size-item);
       flex-shrink: 0;
       color: var(--cv-color-muted) !important;
     }
@@ -125,10 +125,9 @@
     & .contact-item__value {
       position: relative;
       color: var(--cv-color-text);
-      font-size: calc(var(--font-size-item) * var(--cv-font-scale));
+      font-size: var(--font-size-item);
       line-height: var(--cv-line-height);
       text-decoration: none;
-      overflow-wrap: anywhere;
 
       &:hover {
         text-decoration: underline;

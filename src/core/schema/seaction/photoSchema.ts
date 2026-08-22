@@ -1,5 +1,5 @@
 
-export interface PhotoConfigProps {
+export interface PhotoConfigSchema {
   defaultValue: string;
   display: boolean;
   isChangeDisplay: boolean;

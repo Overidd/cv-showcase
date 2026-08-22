@@ -1,0 +1,13 @@
+/* ! */
+/* .sumary {
+  margin-bottom: var(--cv-spacing-section);
+} */
+
+.sumary-paragraph {
+  margin: 0;
+  padding: 0;
+
+  font-size: var(--font-size-item);
+  line-height: var(--cv-line-height);
+  color: var(--cv-color-text);
+}

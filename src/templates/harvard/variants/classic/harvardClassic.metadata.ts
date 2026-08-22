@@ -1,6 +1,4 @@
-import type {
-  ThemeConfigCSS
-} from '@/core/config';
+import type { ThemeConfigCSS } from "@/core/config/theme/themeConfig.css";
 
 export const defaultTheme: ThemeConfigCSS = {
   typography: {
@@ -14,7 +12,7 @@ export const defaultTheme: ThemeConfigCSS = {
     headingScale: 1,
 
     // Interlineado compacto pero cómodo para un CV.
-    lineHeight: 1.35,
+    lineHeight: 1,
   },
 
   page: {

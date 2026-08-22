@@ -5,6 +5,7 @@ export interface FieldProps<TValue = React.ReactNode> {
   display: boolean;
 }
 
+// export interface FieldChildrenProps 
 
 /**
  * Props de un campo que utiliza una variante.

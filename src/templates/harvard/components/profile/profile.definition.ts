@@ -1,20 +1,22 @@
 import type {
-  InferProfileProps,
-  ProfilePropsConfig,
-  SectionConfig
-} from '@/core/config';
+  InferProfileSchema,
+  ProfileSchema
+} from '@/core/schema';
+
+import type {
+  SectionDefinition
+} from '@/core/definition';
 
 import {
   defineVariant
-} from '@/core/config';
+} from '@/core/interface';
 
 import {
   Profile
 } from '.'
 
-export const profileProps = {
+const profileSchema = {
   name: {
-    value: '',
     variant: defineVariant({
       value: 'capitalize',
       options: [
@@ -28,13 +30,11 @@ export const profileProps = {
   },
 
   title: {
-    value: '',
     isChangeDisplay: true,
     display: true,
   },
 
   contact: {
-    value: '',
     display: true,
     isChangeDisplay: false,
 
@@ -107,12 +107,12 @@ export const profileProps = {
 
     display: true,
   },
-} satisfies ProfilePropsConfig;
+} satisfies ProfileSchema;
 
-export type ProfileProps = InferProfileProps<typeof profileProps>;
+export type ProfileProps = InferProfileSchema<typeof profileSchema>;
 
 
-export const profileConfig = {
+export const profileDefinition = {
   key: 'sectionProfile',
 
   name: 'Sección Perfil',
@@ -122,12 +122,12 @@ export const profileConfig = {
   interconnections: [],
 
   config: {
-    isDelete: false,
-    isDragAndDrop: false,
-    isDuplicate: false,
-    isEdit: true
+    canDelete: false,
+    canDragAndDrop: false,
+    canDuplicate: false,
+    canEdit: true
   },
 
-  props: profileProps,
+  schema: profileSchema,
 
-} satisfies SectionConfig<'sectionProfile', ProfileProps>;
+} satisfies SectionDefinition<ProfileSchema, ProfileProps>;

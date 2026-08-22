@@ -20,10 +20,10 @@ export const ContactItem = ({
   const Icon = IconSmall[icon]
 
   return (
-    <div className="contact-item">
+    <div className='contact-item'>
       <Icon className='contact-item__icon' />
 
-      <span className="contact-item__value">
+      <span className='contact-item__value paragraph'>
         {value}
       </span>
     </div>

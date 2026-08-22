@@ -1,12 +1,13 @@
 import './styles.css';
 
-import { themeConfig } from '@/core/config';
 import { defaultTheme } from './harvardClassic.metadata';
 import type { Decorator } from '@storybook/react-vite';
+import { themeConfig } from '@/core/config';
 
 export const withHarvardTheme: Decorator = (Story) => {
   return (
     <div
+      className='cv-harvard-decorator'
       style={themeConfig(defaultTheme)}
     >
       <Story />

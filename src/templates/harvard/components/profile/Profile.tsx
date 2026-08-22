@@ -1,6 +1,8 @@
 import './Profile.css'
-import type { ProfileProps } from './profile.config';
 
+import type {
+  ProfileProps
+} from './profile.definition';
 
 import {
   Photo,
@@ -8,14 +10,13 @@ import {
   Name,
 } from '.';
 
-
 export const Profile = ({
   contact,
   name,
   photo,
   title
 }: ProfileProps) => {
-
+  // name.
   return (
     <header className='profile'>
       {photo.display &&
@@ -26,18 +27,26 @@ export const Profile = ({
         />
       }
       <div className='profile-header__identity'>
-        <Name
-          value={name.value}
-          variant={name.variant}
-        />
-        <p>
-          {title.value}
-        </p>
+        {name.display &&
+          <Name
+            value={name.value}
+            variant={name.variant}
+          />
+        }
+
+        {title.display &&
+          <p>
+            {title.value}
+          </p>
+        }
       </div>
-      <ContactInfo
-        data={contact.children}
-        variant={contact.variant}
-      />
+
+      {contact.display &&
+        <ContactInfo
+          data={contact.children}
+          variant={contact.variant}
+        />
+      }
     </header>
   )
 }
