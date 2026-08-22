@@ -1,0 +1,16 @@
+.measure-card {
+  position: relative;
+}
+
+.measure-card::before {
+  content: attr(data-dimension);
+  position: absolute;
+  bottom: 100%;
+
+  pointer-events: none;
+  color: #999;
+}
+
+.measure-card[data-is-show-dimension="false"]::before {
+  content: none;
+}

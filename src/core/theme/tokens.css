@@ -1,0 +1,29 @@
+:root {
+  /* Typography */
+  --cv-font-family: Inter;
+  --cv-font-scale: 1;
+  --cv-heading-scale: 1;
+  --cv-line-height: 1.4;
+
+  /* Page */
+  --cv-page-width: 210mm;
+  --cv-page-height: 297mm;
+
+  --cv-page-padding-top: 15mm;
+  --cv-page-padding-right: 18mm;
+  --cv-page-padding-bottom: 15mm;
+  --cv-page-padding-left: 18mm;
+
+  /* Colors */
+  --cv-color-primary: #1f2937;
+  --cv-color-secondary: #6b7280;
+  --cv-color-text: #333333;
+  --cv-color-muted: #777777;
+  --cv-color-background: #ffffff;
+  --cv-color-border: #e5e7eb;
+
+  /* Spacing */
+  --cv-spacing-section: 5mm;
+  --cv-spacing-component: 0.75rem;
+  --cv-spacing-item: 0.35rem;
+}
