@@ -1,6 +1,12 @@
-export * from './photoSchema';
-export * from './profileSchema';
-export * from './profileSchema.infer';
+export * from './base.schema';
 
-export * from './summarySchema';
-export * from './summarySchema.infer';
+export * from './photo.schema';
+
+export * from './profile.schema';
+export * from './profile.schema.infer';
+
+export * from './summary.schema';
+export * from './summary.schema.infer';
+
+export * from './workExperience.schema'
+export * from './workExperience.schema.infer'

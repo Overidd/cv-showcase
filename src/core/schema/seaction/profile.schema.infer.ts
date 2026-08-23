@@ -8,7 +8,7 @@ import type {
 
 import type {
   ProfileSchema
-} from './profileSchema';
+} from './profile.schema';
 
 export type InferProfileSchema<
   T extends ProfileSchema

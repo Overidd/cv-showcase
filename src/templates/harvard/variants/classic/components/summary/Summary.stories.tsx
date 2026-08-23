@@ -1,6 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { withHarvardTheme } from '../../variants/classic';
-import { summaryDefinition, type SummaryProps } from './summary.config';
+import { withHarvardTheme } from '../..';
+import { summaryDefinition } from './summary.definition';
+import type { SummaryProps } from './summary.schema';
 
 const meta = {
   title: 'Templates/Harvard/Classic/Sumary',
@@ -22,18 +23,9 @@ type Story = StoryObj<typeof meta>;
 
 
 const baseArgs: SummaryProps = {
-  title: {
-    ...summaryDefinition.schema.title,
-    value: '',
-  },
-
-  sectionName: {
-    ...summaryDefinition.schema.sectionName,
-    value: ''
-  },
-
   contents: {
     ...summaryDefinition.schema.contents,
+
     data: [
       {
         id: 'asdasd',

@@ -3,7 +3,6 @@ import type {
 } from '@/core/definition';
 
 import type {
-  InferSummarySchema,
   SummarySchema
 } from '@/core/schema';
 
@@ -11,24 +10,13 @@ import {
   Summary
 } from './Summary';
 
-const sumarySchema = {
-  sectionName: {
-    display: true,
-    isChangeDisplay: false
-  },
+import type {
+  SummaryProps
+} from './summary.schema';
 
-  title: {
-    display: true,
-    isChangeDisplay: false,
-  },
-
-  contents: {
-    display: true,
-    isChangeDisplay: false,
-  }
-} satisfies SummarySchema;
-
-export type SummaryProps = InferSummarySchema<typeof sumarySchema>
+import {
+  sumarySchema,
+} from './summary.schema';
 
 export const summaryDefinition = {
   key: 'sectionSummary',

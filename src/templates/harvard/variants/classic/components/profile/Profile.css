@@ -1,20 +1,18 @@
-/* ! */
-/* .profile {
-  margin-bottom: var(--cv-spacing-section);
-} */
+.profile {
+  display: flex;
+  flex-direction: column;
+  gap: var(--cv-spacing-component) 0;
+}
 
 /* Photo */
 .photo {
-  display: flex;
+  /* display: flex; */
   width: 6.5rem;
   height: 6.5rem;
-  flex-basis: 0%;
+  flex-basis: 6.5rem;
   min-width: 0;
-  margin: 0 auto;
+  margin: 1rem auto;
   overflow: hidden;
-
-  /*!  */
-  margin-bottom: calc(var(--cv-spacing-component));
 
   /* Photo - Variants */
   &.photo--square {
@@ -78,9 +76,6 @@
   justify-content: center;
 
   gap: calc(var(--space-size-item) - 10px) var(--space-size-item);
-
-  /*!  */
-  margin-top: var(--cv-spacing-component);
 
   /* Contact Info - List */
   &.contact-info--list {

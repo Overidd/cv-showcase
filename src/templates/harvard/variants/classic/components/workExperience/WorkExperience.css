@@ -1,0 +1,76 @@
+/* WorkExperience.css */
+.work-experience {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.work-experience__header,
+.work-experience__subheader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.company-line {
+  display: flex;
+  align-items: baseline;
+  gap: 6px;
+}
+
+.company-name {
+  font-weight: 600;
+}
+
+.experience__separator {
+  color: var(--color-muted, #9ca3af);
+}
+
+.work-experience__link {
+  color: var(--color-muted, #9ca3af);
+  text-decoration: none;
+}
+
+.section-title {
+  /*  */
+}
+
+.location,
+.period {
+  color: var(--color-accent, #2563eb);
+  white-space: nowrap;
+  font-size: 0.9em;
+}
+
+.job-title {
+  font-weight: 500;
+  margin: 0;
+}
+
+.description {
+  color: var(--color-muted, #9ca3af);
+  margin: 0;
+}
+
+.achievements {
+  margin: 0;
+  padding-left: 1.2em;
+}
+
+.achievements--circle {
+  list-style-type: disc;
+}
+
+.achievements--square {
+  list-style-type: square;
+}
+
+.achievements--none {
+  list-style: none;
+  padding-left: 0;
+}
+
+.achievement-item {
+  font-size: 0.95em;
+}

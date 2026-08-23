@@ -1,6 +1,9 @@
 import type {
   Field,
   FieldCollection,
+  FieldCollectionProps,
+  FieldHypertext,
+  FieldHyperTextProps,
   FieldProps,
   VariantConfig
 } from '@/core/interface';
@@ -10,11 +13,16 @@ export type InferFieldSchema<T, FieldValue = React.ReactNode> =
   ? FieldProps<FieldValue>
   : never;
 
+export type InferFieldHypertextSchema<T, FieldValue = React.ReactNode> =
+  T extends FieldHypertext
+  ? FieldHyperTextProps<FieldValue>
+  : never
+
 export type InferCollectionSchema<
   T,
 > =
-  T extends FieldCollection<infer TValue>
-  ? FieldCollection<TValue>
+  T extends FieldCollection
+  ? FieldCollectionProps
   : never;
 
 export type InferVariant<T> =

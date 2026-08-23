@@ -1,17 +1,22 @@
 import './Summary.css';
 
+import {
+  Separator
+} from '@/shared/components';
+
 import type {
   SummaryProps
-} from './summary.config';
+} from './summary.schema';
 
 export const Summary = ({
-  contents
+  contents,
 }: SummaryProps) => {
 
   return (
     <section
       className='summary'
     >
+      <Separator className='separator' />
       {
         contents.display && (
           contents.data?.map(({ id, value }) => (

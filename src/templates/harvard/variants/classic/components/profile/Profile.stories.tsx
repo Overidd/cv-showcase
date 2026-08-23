@@ -1,16 +1,7 @@
-import type {
-  Meta,
-  StoryObj
-} from '@storybook/react-vite';
-
-import {
-  withHarvardTheme
-} from '../../variants/classic';
-
-import {
-  profileDefinition,
-  type ProfileProps
-} from '.';
+import type { Meta, StoryObj } from '@storybook/react-vite';
+import { profileDefinition } from './profile.definition';
+import { withHarvardTheme } from '../../HarvardClassic.decorator';
+import type { ProfileProps } from './profile.schema';
 
 const meta = {
   title: 'Templates/Harvard/Classic/Profile',

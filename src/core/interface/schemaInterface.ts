@@ -5,14 +5,21 @@ export interface Field<TValue = string> {
   isChangeDisplay: boolean;
 }
 
+export interface FieldHypertext<TValue = string> {
+  value?: TValue;
+  href?: string;
+  display: boolean;
+  isChangeDisplay: boolean;
+}
+
 // CollectionConfig
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export interface FieldCollection<TValue = string> {
   display: boolean;
   isChangeDisplay: boolean;
+  marker?: 'bullet' | 'circle' | 'square' | 'dash' | 'arrow' | 'check' | 'diamond' | 'start' | 'icon' | 'all'
   data?: Array<{
     id: string,
-    value: React.ReactNode,
+    value: TValue,
   }>;
 }
 

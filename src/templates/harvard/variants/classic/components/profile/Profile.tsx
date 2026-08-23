@@ -1,14 +1,14 @@
 import './Profile.css'
 
-import type {
-  ProfileProps
-} from './profile.definition';
-
 import {
-  Photo,
   ContactInfo,
   Name,
-} from '.';
+  Photo
+} from '@/templates/harvard/components'
+
+import type {
+  ProfileProps
+} from './profile.schema'
 
 export const Profile = ({
   contact,

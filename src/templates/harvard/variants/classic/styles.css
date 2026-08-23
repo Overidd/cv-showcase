@@ -51,9 +51,7 @@ select {
   }
 }
 
-/* Temporal */
-.cv-harvard-decorator {
-
+.cv-var {
   /* Identity */
   --font-size-identiy-name: calc(22pt * var(--cv-font-scale) * var(--cv-heading-scale));
 
@@ -69,9 +67,26 @@ select {
   /* Space */
   --space-size-item: calc(0.5rem + var(--cv-spacing-item));
 
+}
+
+.cv-var {
   font-family: var(--cv-font-family);
 }
 
+/* Temporal */
+.cv-harvard {
+  font-family: var(--cv-font-family);
+  width: var(--cv-page-width);
+  height: var(--cv-page-height);
+
+  padding: var(--cv-page-padding-top) var(--cv-page-padding-right) var(--cv-page-padding-bottom) var(--cv-page-padding-left);
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--cv-spacing-section) 0;
+
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
 
 .paragraph {
   white-space: normal;
@@ -81,4 +96,10 @@ select {
   max-width: 100%;
 }
 
-/* font-size: calc(var(--font-size-body) * var(--cv-font-scale)); */
+.separator {
+  width: 100%;
+  border: 0;
+  /* margin: var(--cv-spacing-section) 0; */
+  border-top: 1px solid var(--cv-color-muted);
+  /* ma */
+}

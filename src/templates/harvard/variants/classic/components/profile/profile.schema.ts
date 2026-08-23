@@ -3,19 +3,11 @@ import type {
   ProfileSchema
 } from '@/core/schema';
 
-import type {
-  SectionDefinition
-} from '@/core/definition';
-
 import {
   defineVariant
 } from '@/core/interface';
 
-import {
-  Profile
-} from '.'
-
-const profileSchema = {
+export const profileSchema = {
   name: {
     variant: defineVariant({
       value: 'capitalize',
@@ -110,24 +102,3 @@ const profileSchema = {
 } satisfies ProfileSchema;
 
 export type ProfileProps = InferProfileSchema<typeof profileSchema>;
-
-
-export const profileDefinition = {
-  key: 'sectionProfile',
-
-  name: 'Sección Perfil',
-
-  component: Profile,
-
-  interconnections: [],
-
-  config: {
-    canDelete: false,
-    canDragAndDrop: false,
-    canDuplicate: false,
-    canEdit: true
-  },
-
-  schema: profileSchema,
-
-} satisfies SectionDefinition<ProfileSchema, ProfileProps>;

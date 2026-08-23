@@ -2,7 +2,8 @@ import type React from 'react';
 
 import type {
   ProfileSchema,
-  SummarySchema
+  SummarySchema,
+  WorkExperienceSchema
 } from '@/core/schema';
 
 export interface SectionConfigMap {
@@ -10,7 +11,10 @@ export interface SectionConfigMap {
     schema: ProfileSchema;
   };
   sectionSummary: {
-    schema: SummarySchema
+    schema: SummarySchema;
+  };
+  sectionWorkExperience: {
+    schema: WorkExperienceSchema;
   }
 }
 
