@@ -52,25 +52,62 @@ select {
 }
 
 .cv-var {
-  /* Identity */
-  --font-size-identiy-name: calc(22pt * var(--cv-font-scale) * var(--cv-heading-scale));
+  /** --- Tipografía --- */
 
-  --font-size-title: calc(14.67pt * var(--cv-font-scale));
+  /* Define el tamaño de fuente para el nombre; escala dinámicamente multiplicando 22pt por la escala general y la de encabezados */
+  --hc-fs-name: calc(22pt * var(--cv-font-scale) * var(--cv-heading-scale));
 
-  /* Sections */
-  --font-size-section-name: 15pt;
+  /* Establece el tamaño de letra para los títulos (14.67pt base) ajustado por la escala global del texto */
+  --hc-fs-title: calc(14.67pt * var(--cv-font-scale));
 
-  /* Content */
-  --font-size-item: calc(13pt * var(--cv-font-scale));
-  --icon-size-item: calc(1.1rem * var(--cv-font-scale));
+  /* Determina el tamaño de texto estándar para los títulos de sección con un valor estático de 15pt */
+  --hc-fs-section: 15pt;
 
-  /* Space */
+  /* Define el tamaño del cuerpo del texto general partiendo de 13pt y ajustándose según la escala */
+  --hc-fs-body: calc(13pt * var(--cv-font-scale));
 
-  --space-size-item: calc(0.5rem + var(--cv-spacing-item));
+  /* Asigna la altura de línea (interlineado) delegando su valor a la variable global correspondiente */
+  --hc-line-height: var(--cv-line-height);
 
-}
 
-.cv-var {
+  /** --- Iconografía --- */
+
+  /* Controla las dimensiones del icono con una base de 1.1rem que escala proporcionalmente al texto */
+  --hc-icon-size: calc(1.1rem * var(--cv-font-scale));
+
+
+  /** --- Colores --- */
+
+  /* Representa el color primario de la interfaz, enlazado a la paleta base del proyecto */
+  --hc-color-primary: var(--cv-color-primary);
+
+  /* Define el color secundario heredando el tono configurado a nivel global */
+  --hc-color-secondary: var(--cv-color-secondary);
+
+  /* Establece el color principal para la lectura y textos generales */
+  --hc-color-text: var(--cv-color-text);
+
+  /* Asigna una tonalidad tenue para texto secundario o detalles menos relevantes */
+  --hc-color-muted: var(--cv-color-muted);
+
+  /* Define el color de fondo para el contenedor o la sección */
+  --hc-color-background: var(--cv-color-background);
+
+  /* Controla el tono de los bordes o líneas separadoras */
+  --hc-color-border: var(--cv-color-border);
+
+
+  /** --- Espaciado --- */
+
+  /* Gestiona el espacio entre secciones grandes utilizando el estándar global */
+  --hc-space-section: var(--cv-spacing-section);
+
+  /* Regula la distancia interna entre componentes de un mismo bloque */
+  --hc-space-component: var(--cv-spacing-component);
+
+  /* Calcula el espacio entre elementos individuales sumando un fijo de 0.5rem al valor de espaciado base */
+  --hc-space-item: calc(0.5rem + var(--cv-spacing-item));
+  /* --- Base --- */
   font-family: var(--cv-font-family);
 }
 
@@ -99,7 +136,5 @@ select {
 .separator {
   width: 100%;
   border: 0;
-  /* margin: var(--cv-spacing-section) 0; */
-  border-top: 1px solid var(--cv-color-muted);
-  /* ma */
+  border-top: 1px solid var(--cv-color-border);
 }

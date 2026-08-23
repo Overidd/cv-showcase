@@ -1,7 +1,7 @@
 .profile {
   display: flex;
   flex-direction: column;
-  gap: var(--cv-spacing-component) 0;
+  gap: var(--hc-space-component) 0;
 }
 
 /* Photo */
@@ -39,14 +39,14 @@
   flex-direction: column;
   align-items: center;
 
-  gap: calc(var(--space-size-item) - 5px) 0;
+  gap: calc(var(--hc-space-item) - 5px) 0;
 
   /* Name */
   .name {
     margin: 0;
     padding: 0;
-    color: var(--cv-color-primary);
-    font-size: var(--font-size-identiy-name);
+    color: var(--hc-color-primary);
+    font-size: var(--hc-fs-name);
     font-weight: 700;
     line-height: 0.5;
 
@@ -61,10 +61,10 @@
   }
 
   & p {
-    margin: var(--cv-spacing-item) 0 0;
-    color: var(--cv-color-secondary);
-    font-size: var(--font-size-title);
-    line-height: var(--cv-line-height);
+    margin: var(--hc-space-item) 0 0;
+    color: var(--hc-color-secondary);
+    font-size: var(--hc-fs-title);
+    line-height: var(--hc-line-height);
   }
 }
 
@@ -75,7 +75,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: calc(var(--space-size-item) - 10px) var(--space-size-item);
+  gap: calc(var(--hc-space-item) - 10px) var(--hc-space-item);
 
   /* Contact Info - List */
   &.contact-info--list {
@@ -110,18 +110,18 @@
 
     /* Contact Item - Icon */
     & .contact-item__icon {
-      width: var(--icon-size-item);
-      height: var(--icon-size-item);
+      width: var(--hc-icon-size);
+      height: var(--hc-icon-size);
       flex-shrink: 0;
-      color: var(--cv-color-muted) !important;
+      color: var(--hc-color-muted) !important;
     }
 
     /* Contact Item - Value */
     & .contact-item__value {
       position: relative;
-      color: var(--cv-color-text);
-      font-size: var(--font-size-item);
-      line-height: var(--cv-line-height);
+      color: var(--hc-color-text);
+      font-size: var(--hc-fs-body);
+      line-height: var(--hc-line-height);
       text-decoration: none;
 
       &:hover {
@@ -129,4 +129,4 @@
       }
     }
   }
-}
+}

@@ -2,32 +2,6 @@ import type {
   ThemeConfigCSS
 } from '@/core/config/theme';
 
-
-// {
-//    '--cv-font-family': theme.typography.fontFamily,
-//     '--cv-font-scale': theme.typography.scale,
-//     '--cv-heading-scale': theme.typography.headingScale,
-//     '--cv-line-height': theme.typography.lineHeight,
-
-//     '--cv-page-width': pageSize.width,
-//     '--cv-page-height': pageSize.height,
-
-//     '--cv-page-padding-top': theme.page.padding.top,
-//     '--cv-page-padding-right': theme.page.padding.right,
-//     '--cv-page-padding-bottom': theme.page.padding.bottom,
-//     '--cv-page-padding-left': theme.page.padding.left,
-
-//     '--cv-color-primary': theme.colors.primary,
-//     '--cv-color-secondary': theme.colors.secondary,
-//     '--cv-color-text': theme.colors.text,
-//     '--cv-color-muted': theme.colors.muted,
-//     '--cv-color-background': theme.colors.background,
-//     '--cv-color-border': theme.colors.border,
-
-//     '--cv-spacing-section': theme.spacing.section,
-//     '--cv-spacing-component': theme.spacing.component,
-//     '--cv-spacing-item': theme.spacing.item,
-// }
 export const HarvardClassicTheme: ThemeConfigCSS = {
   typography: {
     // Harvard clásico suele funcionar muy bien con una serif tradicional.
@@ -71,7 +45,7 @@ export const HarvardClassicTheme: ThemeConfigCSS = {
   spacing: {
     section: '4.5mm',
 
-    component: '0.65rem',
+    component: '0.8rem', // 0.65rem
 
     item: '0.3rem',
   },
