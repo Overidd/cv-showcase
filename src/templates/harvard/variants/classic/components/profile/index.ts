@@ -1,3 +1,3 @@
 export * from './Profile'
-export * from './profile.definition'
 export * from './profile.schema'
+export * from './profile.definition'

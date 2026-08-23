@@ -1,76 +1,124 @@
-/* WorkExperience.css */
+/* Work Experience */
+
 .work-experience {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: var(--cv-spacing-component) 0;
 }
 
+/* Title */
+.section-title {
+  font-size: var(--font-size-section-name);
+}
+
+.work-experience__history {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-size-item) 0;
+}
+
+/* Header */
 .work-experience__header,
 .work-experience__subheader {
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: 12px;
+  gap: var(--space-size-item) 0;
 }
 
-.company-line {
+.company-info {
   display: flex;
   align-items: baseline;
-  gap: 6px;
+  gap: var(--space-size-item);
+
+
+  .company-name {
+    margin: 0;
+    padding: 0;
+    color: var(--cv-color-text);
+    font-size: var(--font-size-item);
+    font-weight: 600;
+    line-height: var(--cv-line-height);
+  }
+
+  .experience__separator {
+    /*  */
+    color: var(--cv-color-muted);
+  }
+
+  .experience__link {
+    color: var(--cv-color-secondary);
+    font-size: var(--font-size-item);
+    line-height: var(--cv-line-height);
+    text-decoration: none;
+  }
+
+  .experience__link:hover {
+    text-decoration: underline;
+  }
 }
 
-.company-name {
-  font-weight: 600;
-}
-
-.experience__separator {
-  color: var(--color-muted, #9ca3af);
-}
-
-.work-experience__link {
-  color: var(--color-muted, #9ca3af);
-  text-decoration: none;
-}
-
-.section-title {
-  /*  */
-}
+/* Location / Period */
 
 .location,
 .period {
-  color: var(--color-accent, #2563eb);
+  color: var(--cv-color-secondary);
+  font-size: var(--font-size-item);
+  line-height: var(--cv-line-height);
   white-space: nowrap;
-  font-size: 0.9em;
 }
 
+/* Job */
 .job-title {
-  font-weight: 500;
   margin: 0;
+  padding: 0;
+  color: var(--cv-color-secondary);
+  font-size: var(--font-size-item);
+  font-weight: 500;
+  line-height: var(--cv-line-height);
 }
+
+/* Description */
 
 .description {
-  color: var(--color-muted, #9ca3af);
   margin: 0;
+  padding: 0;
+  color: var(--cv-color-text);
+  font-size: var(--font-size-item);
+  line-height: var(--cv-line-height);
 }
 
-.achievements {
+/* Achievement */
+
+.achievement {
   margin: 0;
-  padding-left: 1.2em;
-}
+  /* color: var(--cv-color-text); */
+  /* font-size: var(--font-size-item); */
+  /* line-height: var(--cv-line-height); */
 
-.achievements--circle {
-  list-style-type: disc;
-}
+  /* padding-left: 1.2em; */
 
-.achievements--square {
-  list-style-type: square;
-}
+  /* &.achievement--circle {
+    list-style-type: disc;
+  }
 
-.achievements--none {
-  list-style: none;
-  padding-left: 0;
-}
+  &.achievement--square {
+    list-style-type: square;
+  }
 
-.achievement-item {
-  font-size: 0.95em;
+  &.achievement--none {
+    padding-left: 0;
+    list-style: none;
+  } */
+
+  .achievement-item {
+    font-size: inherit;
+    line-height: inherit;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--cv-color-text);
+    font-size: var(--font-size-item);
+    line-height: var(--cv-line-height);
+  }
 }

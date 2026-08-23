@@ -17,18 +17,18 @@ export const CompanyInfo = ({
   link,
 }: CompanyInfoProps) => {
   return (
-    <div className='company-line'>
+    <div className='company-info'>
       {companyName.display &&
         <span className='company-name'>
           {companyName.value}
         </span>
       }
 
-      {link.display && link.value &&
+      {link.display &&
         <>
           <span className='experience__separator'>—</span>
           <a
-            className='work-experience__link'
+            className='experience__link'
             href={link.href}
             target='_blank'
             rel='noreferrer'

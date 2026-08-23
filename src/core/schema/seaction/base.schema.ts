@@ -4,6 +4,4 @@ import type {
 
 export interface BaseSchema {
   sectionName?: Field<React.ReactNode>
-
-  title?: Field<React.ReactNode>;
 }

@@ -5,9 +5,11 @@ import type {
 } from './base.schema';
 
 import type {
-  FieldCollection,
+  Field,
+  FieldCollections,
 } from '@/core/interface';
 
 export interface SummarySchema extends BaseSchema {
-  contents?: FieldCollection<React.ReactNode>;
+  title?: Field<React.ReactNode>;
+  contents?: FieldCollections<React.ReactNode>;
 }

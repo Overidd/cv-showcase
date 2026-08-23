@@ -13,7 +13,14 @@ export interface FieldHypertext<TValue = string> {
 }
 
 // CollectionConfig
-export interface FieldCollection<TValue = string> {
+export interface FieldParagraph<TValue = string> {
+  value?: TValue,
+  display: boolean;
+  isChangeDisplay: boolean;
+  marker?: 'bullet' | 'circle' | 'square' | 'dash' | 'arrow' | 'check' | 'diamond' | 'start' | 'icon' | 'all'
+}
+
+export interface FieldCollections<TValue = string> {
   display: boolean;
   isChangeDisplay: boolean;
   marker?: 'bullet' | 'circle' | 'square' | 'dash' | 'arrow' | 'check' | 'diamond' | 'start' | 'icon' | 'all'

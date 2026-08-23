@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { WorkExperience } from './WorkExperience';
 import type { WorkExperienceProps } from './workExperience.schema';
-import { withHarvardTheme } from '../../HarvardClassic.decorator';
+import { withHarvardTheme } from '../../template/HarvardClassic.decorator';
 
 const meta = {
   title: 'Templates/Harvard/Classic/WorkExperience',
@@ -26,59 +26,127 @@ const workExperienceData: WorkExperienceProps = {
     value: 'Experiencia Laboral'
   },
 
-  title: {
-    display: true,
-    value: 'Desarrollador Frontend Senior'
-  },
+  history: [
+    {
+      id: '1',
+      title: {
+        display: true,
+        value: 'Desarrollador Frontend Senior'
+      },
 
-  companyName: {
-    display: true,
-    value: 'Tech Solutions S.A.'
-  },
+      companyName: {
+        display: true,
+        value: 'Tech Solutions S.A.'
+      },
 
-  description: {
-    display: true,
-    value: 'Responsable del desarrollo y mantenimiento de aplicaciones web utilizando React y TypeScript, liderando un equipo de 4 desarrolladores.'
-  },
+      description: {
+        display: true,
+        value: 'Responsable del desarrollo y mantenimiento de aplicaciones web utilizando React y TypeScript, liderando un equipo de 4 desarrolladores.'
+      },
 
-  achievements: {
-    display: true,
-    marker: 'circle',
-    data: [
-      {
-        id: 'ach-1',
+      achievement: {
+        display: true,
+        marker: 'circle',
         value: 'Aumenté el rendimiento de la aplicación en un 40% mediante la optimización de renders.'
       },
-      {
-        id: 'ach-2',
-        value: 'Lideré la migración de 15 módulos de JavaScript a TypeScript.'
+
+      location: {
+        display: true,
+        value: 'Lima, Perú'
       },
-      {
-        id: 'ach-3',
-        value: 'Implementé un sistema de diseño reutilizado en 6 proyectos internos.'
+
+      period: {
+        display: true,
+        value: '2021 - 2025'
       },
-      {
-        id: 'ach-4',
-        value: 'Reduje en un 30% el tiempo de carga inicial de la plataforma.'
+
+      link: {
+        display: true,
+        value: 'https://techsolutions.com',
+        href: 'https://techsolutions.com',
       }
-    ]
-  },
+    },
 
-  location: {
-    display: true,
-    value: 'Lima, Perú'
-  },
+    {
+      id: '2',
+      title: {
+        display: true,
+        value: 'Desarrollador Full Stack'
+      },
 
-  period: {
-    display: true,
-    value: '2021 - 2025'
-  },
+      companyName: {
+        display: true,
+        value: 'Innovatech Perú'
+      },
 
-  link: {
-    display: true,
-    value: 'https://techsolutions.com',
-    href: 'https://techsolutions.com',
-  }
+      description: {
+        display: true,
+        value: 'Diseñé y desarrollé aplicaciones empresariales utilizando React, Node.js y PostgreSQL, participando en todo el ciclo de desarrollo del producto.'
+      },
+
+      achievement: {
+        display: true,
+        marker: 'circle',
+        value: 'Reduje el tiempo de carga de las aplicaciones en un 35% mediante mejoras en arquitectura, consultas y manejo del estado.'
+      },
+
+      location: {
+        display: true,
+        value: 'Arequipa, Perú'
+      },
+
+      period: {
+        display: true,
+        value: '2019 - 2021'
+      },
+
+      link: {
+        display: true,
+        value: 'https://innovatech.pe',
+        href: 'https://innovatech.pe',
+      }
+    },
+
+    {
+      id: '3',
+      title: {
+        display: true,
+        value: 'Desarrollador Web Junior'
+      },
+
+      companyName: {
+        display: true,
+        value: 'Digital Creations'
+      },
+
+      description: {
+        display: true,
+        value: 'Participé en el desarrollo de sitios web y plataformas internas, implementando interfaces responsivas y componentes reutilizables con JavaScript y React.'
+      },
+
+      achievement: {
+        display: true,
+        marker: 'circle',
+        value: 'Implementé una biblioteca de componentes reutilizables que redujo significativamente el tiempo de desarrollo de nuevas interfaces.'
+      },
+
+      location: {
+        display: true,
+        value: 'Cusco, Perú'
+      },
+
+      period: {
+        display: true,
+        value: '2017 - 2019'
+      },
+
+      link: {
+        display: true,
+        value: 'https://digitalcreations.pe',
+        href: 'https://digitalcreations.pe',
+      }
+    }
+  ]
 };
 
 export const LongContent: Story = {

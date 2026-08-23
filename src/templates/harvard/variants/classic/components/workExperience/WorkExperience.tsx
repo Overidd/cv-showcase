@@ -1,4 +1,5 @@
 // WorkExperience.tsx
+import { Separator } from '@/shared/components';
 import './WorkExperience.css';
 
 import type {
@@ -6,7 +7,7 @@ import type {
 } from './workExperience.schema';
 
 import {
-  Achievements,
+  Achievement,
   CompanyInfo,
   Description,
   JobTitle,
@@ -17,51 +18,66 @@ import {
 
 export const WorkExperience = ({
   sectionName,
-  title,
-  companyName,
-  description,
-  achievements,
-  location,
-  period,
-  link,
+  history,
 }: WorkExperienceProps) => {
 
   return (
     <section className='work-experience'>
+
       {sectionName.display &&
         <SectionTitle value={sectionName.value} />
       }
 
-      <div className='work-experience__header'>
-        <CompanyInfo
-          companyName={companyName}
-          link={link}
-        />
+      <Separator className='separator' />
 
-        {location.display &&
-          <Location value={location.value} />
-        }
-      </div>
+      {
+        history.map(({
+          id,
+          achievement,
+          companyName,
+          description,
+          link,
+          location,
+          period,
+          title
+        }) =>
+          <article
+            className='work-experience__history'
+            key={id}
+          >
+            <div className='work-experience__header'>
+              <CompanyInfo
+                companyName={companyName}
+                link={link}
+              />
 
-      <div className='work-experience__subheader'>
-        {title.display &&
-          <JobTitle value={title.value} />
-        }
+              {location.display &&
+                <Location value={location.value} />
+              }
+            </div>
 
-        {period.display &&
-          <Period value={period.value} />
-        }
-      </div>
+            <div className='work-experience__subheader'>
+              {title.display &&
+                <JobTitle value={title.value} />
+              }
 
-      {description.display &&
-        <Description value={description.value} />
-      }
+              {period.display &&
+                <Period value={period.value} />
+              }
+            </div>
 
-      {achievements.display && achievements.data && achievements.data.length > 0 &&
-        <Achievements
-          marker={achievements.marker}
-          data={achievements.data}
-        />
+            {description.display &&
+              <Description value={description.value} />
+            }
+
+            {achievement.display &&
+              <Achievement
+                marker={achievement.marker}
+                value={achievement.value}
+              />
+            }
+          </article>
+        )
       }
     </section>
   )

@@ -65,6 +65,7 @@ select {
   --icon-size-item: calc(1.1rem * var(--cv-font-scale));
 
   /* Space */
+
   --space-size-item: calc(0.5rem + var(--cv-spacing-item));
 
 }
@@ -92,7 +93,6 @@ select {
   white-space: normal;
   word-break: normal;
   overflow-wrap: break-word;
-
   max-width: 100%;
 }
 

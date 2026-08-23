@@ -2,7 +2,8 @@ import type React from 'react';
 
 import type {
   Field,
-  FieldCollection
+  FieldCollections,
+  FieldParagraph
 } from './schemaInterface';
 
 export interface FieldProps<TValue = React.ReactNode>
@@ -16,10 +17,16 @@ export interface FieldHyperTextProps<TValue = React.ReactNode>
   href: string
 }
 
+export interface FieldParagraphProps<TValue = React.ReactNode>
+  extends Omit<FieldParagraph<TValue>, 'isChangeDisplay' | 'marker' | 'value'> {
+  marker: NonNullable<FieldParagraph<TValue>['marker']>;
+  value: NonNullable<FieldParagraph<TValue>['value']>;
+}
+
 export interface FieldCollectionProps<TValue = React.ReactNode>
-  extends Omit<FieldCollection<TValue>, 'isChangeDisplay' | 'marker' | 'data'> {
-  marker: NonNullable<FieldCollection<TValue>['marker']>;
-  data: NonNullable<FieldCollection<TValue>['data']>;
+  extends Omit<FieldCollections<TValue>, 'isChangeDisplay' | 'marker' | 'data'> {
+  marker: NonNullable<FieldCollections<TValue>['marker']>;
+  data: NonNullable<FieldCollections<TValue>['data']>;
 }
 
 /**

@@ -9,42 +9,45 @@ export const workExperienceSchema = {
     isChangeDisplay: false,
     value: 'Experiencia Laboral'
   },
+  history: [
+    {
+      title: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-  title: {
-    display: true,
-    isChangeDisplay: true,
-  },
+      companyName: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-  companyName: {
-    display: true,
-    isChangeDisplay: true,
-  },
+      description: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-  description: {
-    display: true,
-    isChangeDisplay: true,
-  },
+      achievement: {
+        display: true,
+        isChangeDisplay: true,
+        marker: 'circle',
+      },
 
-  achievements: {
-    display: true,
-    isChangeDisplay: true,
-    marker: 'circle',
-  },
+      location: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-  location: {
-    display: true,
-    isChangeDisplay: true,
-  },
+      period: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-  period: {
-    display: true,
-    isChangeDisplay: true,
-  },
-
-  link: {
-    display: true,
-    isChangeDisplay: true,
-  }
+      link: {
+        display: true,
+        isChangeDisplay: true,
+      }
+    }
+  ]
 } satisfies WorkExperienceSchema;
 
 export type WorkExperienceProps = InferWorkExperienceSchema<typeof workExperienceSchema>

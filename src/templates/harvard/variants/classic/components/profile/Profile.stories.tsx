@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { profileDefinition } from './profile.definition';
-import { withHarvardTheme } from '../../HarvardClassic.decorator';
+import { withHarvardTheme } from '../../template/HarvardClassic.decorator';
 import type { ProfileProps } from './profile.schema';
 
 const meta = {

@@ -1,4 +1,4 @@
-export * from './Achievements';
+export * from './Achievement';
 export * from './CompanyInfo';
 export * from './Description';
 export * from './JobTitle';

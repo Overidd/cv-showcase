@@ -1,3 +1,3 @@
 export * from './Summary'
-export * from './summary.definition'
 export * from './summary.schema'
+export * from './summary.definition'
