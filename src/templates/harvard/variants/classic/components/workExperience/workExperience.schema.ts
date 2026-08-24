@@ -1,4 +1,5 @@
 import type {
+  InferWorkExperienceItemSchema,
   InferWorkExperienceSchema,
   WorkExperienceSchema
 } from '@/core/schema';
@@ -9,45 +10,46 @@ export const workExperienceSchema = {
     isChangeDisplay: false,
     value: 'Experiencia Laboral'
   },
-  items: [
-    {
-      title: {
-        display: true,
-        isChangeDisplay: true,
-      },
 
-      companyName: {
-        display: true,
-        isChangeDisplay: true,
-      },
+  item: {
+    title: {
+      display: true,
+      isChangeDisplay: true,
+    },
 
-      description: {
-        display: true,
-        isChangeDisplay: true,
-      },
+    companyName: {
+      display: true,
+      isChangeDisplay: true,
+    },
 
-      paragraph: {
-        display: true,
-        isChangeDisplay: true,
-        marker: 'circle',
-      },
+    description: {
+      display: true,
+      isChangeDisplay: true,
+    },
 
-      location: {
-        display: true,
-        isChangeDisplay: true,
-      },
+    paragraph: {
+      display: true,
+      isChangeDisplay: true,
+      marker: 'circle',
+    },
 
-      period: {
-        display: true,
-        isChangeDisplay: true,
-      },
+    location: {
+      display: true,
+      isChangeDisplay: true,
+    },
 
-      link: {
-        display: true,
-        isChangeDisplay: true,
-      }
+    period: {
+      display: true,
+      isChangeDisplay: true,
+    },
+
+    link: {
+      display: true,
+      isChangeDisplay: true,
     }
-  ]
+  }
 } satisfies WorkExperienceSchema;
 
 export type WorkExperienceProps = InferWorkExperienceSchema<typeof workExperienceSchema>
+
+export type WorkExperienceItemProps = InferWorkExperienceItemSchema<typeof workExperienceSchema>

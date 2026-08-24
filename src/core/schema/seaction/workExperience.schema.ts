@@ -7,6 +7,7 @@ import type {
 import type {
   BaseSchema
 } from './base.schema';
+import type React from 'react';
 
 /**
  * Representa la sección de experiencia laboral para perfiles de usuario o currículums.
@@ -14,7 +15,7 @@ import type {
 export interface WorkExperienceSchema extends BaseSchema {
   /** Nombre de la empresa u organización. */
 
-  items: Array<{
+  item: {
     id?: string,
 
     title?: Field<React.ReactNode>;
@@ -35,5 +36,5 @@ export interface WorkExperienceSchema extends BaseSchema {
 
     /** Enlace externo al sitio web de la empresa o proyecto relacionado. */
     link?: FieldHypertext<React.ReactNode>;
-  }>
+  }
 }

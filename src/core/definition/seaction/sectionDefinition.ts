@@ -53,4 +53,24 @@ export type SectionDefinition<
   };
 
   schema: TSchema;
+
+  item?: {
+    component: React.ComponentType<
+      TProps extends {
+        item: {
+          component: React.ComponentType<infer TItem>;
+        };
+      }
+      ? TItem
+      : never
+    >;
+
+    config: {
+      canAdd: boolean,
+      canDelete: boolean,
+      canDuplicate: boolean,
+      canDragAndDrop: boolean,
+      canEdit: boolean,
+    },
+  },
 };

@@ -9,7 +9,8 @@ import type {
 } from './summary.schema';
 
 export const Summary = ({
-  contents,
+  items,
+  Item,
 }: SummaryProps) => {
 
   return (
@@ -18,16 +19,12 @@ export const Summary = ({
     >
       <Separator className='separator' />
       {
-        contents.display && (
-          contents.data?.map(({ id, value }) => (
-            <p
-              key={id}
-              className='summary__paragraph paragraph'
-            >
-              {value}
-            </p>
-          ))
-        )
+        items.map((data) => (
+          <Item
+            key={data.id}
+            {...data}
+          />
+        ))
       }
     </section>
   )

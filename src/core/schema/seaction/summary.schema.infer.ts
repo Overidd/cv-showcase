@@ -1,49 +1,40 @@
+import type React from 'react';
+
 import type {
-  InferCollectionSchema,
   InferFieldSchema,
+  InferParagraphSchema,
 } from '@/core/interface';
 
 import type {
-  SummarySchema
+  SummarySchema,
 } from './summary.schema';
 
-export type InferSummarySchema<
+export type InferSummaryItemSchema<
   T extends SummarySchema
 > = {
-    [K in keyof T]:
-    K extends 'sectionName'
-    ? InferFieldSchema<T[K]>
-    : K extends 'title'
-    ? InferFieldSchema<T[K]>
-    : K extends 'contents'
-    ? InferCollectionSchema<T[K]>
-    : never;
+  id: string;
+} & {
+    [K in keyof NonNullable<T['item']> as K extends 'id' ? never : K]:
+    K extends 'summary'
+    ? InferParagraphSchema<NonNullable<T['item']>[K]>
+    : InferFieldSchema<NonNullable<T['item']>[K]>;
   };
-/*
- 
-export type InferSummarySchema<
-T extends SummarySchema
-> = {
-[K in keyof T]:
-  K extends 'sectionName' | 'title'
-    ? InferFieldSchema<T[K]>
-    : K extends 'contents'
-      ? InferCollectionSchema<T[K]>
-      : never;
-};
-
---------
-type InferSummaryField<T> =
-  T extends Field
-    ? InferFieldSchema<T>
-    : T extends FieldCollection<infer TValue>
-      ? FieldCollection<TValue>
-      : never;
 
 export type InferSummarySchema<
   T extends SummarySchema
 > = {
-  [K in keyof T]: InferSummaryField<T[K]>;
-};
-
-*/
+  [K in keyof T as K extends 'item' ? 'items' : K]:
+  K extends 'sectionName'
+  ? InferFieldSchema<T[K]>
+  : K extends 'item'
+  ? Array<InferSummaryItemSchema<T>>
+  : never;
+} & (
+    T['item'] extends undefined
+    ? Record<string, never>
+    : {
+      Item: React.ComponentType<
+        InferSummaryItemSchema<T>
+      >;
+    }
+  );

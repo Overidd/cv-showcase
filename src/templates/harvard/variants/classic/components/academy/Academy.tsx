@@ -1,12 +1,7 @@
 import './Academy.css';
 
 import {
-  ParagraphBody,
-  Location,
-  Name,
-  Period,
   SectionTitle,
-  Title
 } from '@/templates/harvard/components';
 
 import {
@@ -19,7 +14,8 @@ import type {
 
 export const Academy = ({
   sectionName,
-  items
+  items,
+  Item
 }: AcademyProps) => {
 
   return (
@@ -32,48 +28,11 @@ export const Academy = ({
       <Separator className='separator' />
 
       {
-        items.map(({
-          id,
-          location,
-          name,
-          period,
-          title,
-          paragraph
-        }) => (
-          <article
-            className='academy__item'
-            key={id}
-          >
-
-            <div className='academy__item-header'>
-              {name.display &&
-                <Name
-                  value={name.value}
-                />
-              }
-
-              {location.display &&
-                <Location value={location.value} />
-              }
-            </div>
-
-            <div className='academy__item-subheader'>
-              {title.display &&
-                <Title value={title.value} />
-              }
-
-              {period.display &&
-                <Period value={period.value} />
-              }
-            </div>
-
-            {paragraph.display &&
-              <ParagraphBody
-                marker={paragraph.marker}
-                value={paragraph.value}
-              />
-            }
-          </article>
+        items.map((data) => (
+          <Item
+            key={data.id}
+            {...data}
+          />
         ))
       }
     </section>

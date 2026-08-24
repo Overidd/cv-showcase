@@ -14,6 +14,7 @@ import {
 import type {
   AcademyProps
 } from './academy.schema';
+import { AcademyItem } from './AcademyItem';
 
 const meta = {
   title: 'Templates/Harvard/Classic/Academy',
@@ -25,18 +26,31 @@ const meta = {
     layout: 'centered',
   },
 
-  decorators: [withHarvardTheme]
+  decorators: [withHarvardTheme],
+
+  excludeStories: ['academyData'],
+
+  argTypes: {
+    Item: {
+      control: false,
+      table: {
+        disable: true,
+      },
+    },
+  },
 
 } satisfies Meta<typeof Academy>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const AcademyData: AcademyProps = {
+export const academyData: AcademyProps = {
   sectionName: {
     display: true,
     value: 'Educación',
   },
+
+  Item: AcademyItem,
 
   items: [
     {
@@ -116,5 +130,5 @@ export const AcademyData: AcademyProps = {
 
 export const LongContent: Story = {
   name: 'Contenido completo',
-  args: AcademyData
+  args: academyData
 };

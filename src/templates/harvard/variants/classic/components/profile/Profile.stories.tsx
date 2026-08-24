@@ -1,7 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { profileDefinition } from './profile.definition';
 import { withHarvardTheme } from '../../template/HarvardClassic.decorator';
-import type { ProfileProps } from './profile.schema';
 
 const meta = {
   title: 'Templates/Harvard/Classic/Profile',
@@ -15,6 +14,7 @@ const meta = {
   },
 
   decorators: [withHarvardTheme],
+  excludeStories: ['baseArgsProfile']
 
 } satisfies Meta<typeof profileDefinition.component>;
 
@@ -23,15 +23,15 @@ export default meta;
 type Story = StoryObj<typeof meta>;
 
 //* Configuración base
-const baseArgs: ProfileProps = {
+export const baseArgsProfile = {
   name: {
-    value: '',
+    value: 'Pepe Elías García Fernández',
     variant: profileDefinition.schema.name.variant.value,
     display: profileDefinition.schema.name.display
   },
 
   title: {
-    value: '',
+    value: 'Senior Frontend Software Engineer',
     display: profileDefinition.schema.title.display
   },
 
@@ -50,28 +50,29 @@ const baseArgs: ProfileProps = {
   },
 };
 
+
 //* Default
 export const Default: Story = {
   args: {
-    ...baseArgs,
+    ...baseArgsProfile,
 
     name: {
-      ...baseArgs.name,
+      ...baseArgsProfile.name,
       value: 'Pepe García',
     },
 
     title: {
-      ...baseArgs.title,
+      ...baseArgsProfile.title,
       value: 'Frontend Developer',
     },
 
     photo: {
-      ...baseArgs.photo,
+      ...baseArgsProfile.photo,
       value: '/image/photoDefaul.svg',
     },
 
     contact: {
-      ...baseArgs.contact,
+      ...baseArgsProfile.contact,
     },
   },
 };
@@ -81,14 +82,14 @@ export const NameVariantUppercase: Story = {
   name: 'Variante del nombre en mayúsculas',
 
   args: {
-    ...baseArgs,
+    ...baseArgsProfile,
     photo: {
       display: false,
       value: '',
       variant: 'square'
     },
     name: {
-      ...baseArgs.name,
+      ...baseArgsProfile.name,
       value: 'pepe garcía',
       variant: 'uppercase',
     },
@@ -99,14 +100,14 @@ export const NameVariantCapitalize: Story = {
   name: 'Capitalizar variante de nombre',
 
   args: {
-    ...baseArgs,
+    ...baseArgsProfile,
     photo: {
       display: false,
       value: '',
       variant: 'square'
     },
     name: {
-      ...baseArgs.name,
+      ...baseArgsProfile.name,
       value: 'pepe garcía',
       variant: 'capitalize',
     },
@@ -118,20 +119,20 @@ export const PhotoVariantSquare: Story = {
   name: 'Foto variante cuadrada',
 
   args: {
-    ...baseArgs,
+    ...baseArgsProfile,
 
     name: {
-      ...baseArgs.name,
+      ...baseArgsProfile.name,
       value: 'Pepe García',
     },
 
     photo: {
-      ...baseArgs.photo,
+      ...baseArgsProfile.photo,
       variant: 'square',
     },
 
     title: {
-      ...baseArgs.title,
+      ...baseArgsProfile.title,
       value: 'Senior Frontend Software Engineer',
       display: false
     }
@@ -142,20 +143,20 @@ export const PhotoVariantCircular: Story = {
   name: 'Variante fotográfica circular',
 
   args: {
-    ...baseArgs,
+    ...baseArgsProfile,
 
     name: {
-      ...baseArgs.name,
+      ...baseArgsProfile.name,
       value: 'Pepe García',
     },
 
     photo: {
-      ...baseArgs.photo,
+      ...baseArgsProfile.photo,
       variant: 'circular',
     },
 
     title: {
-      ...baseArgs.title,
+      ...baseArgsProfile.title,
       value: 'Senior Frontend Software Engineer'
     }
   },
@@ -167,21 +168,21 @@ export const WithoutPhoto: Story = {
   name: 'Sin foto de perfil',
 
   args: {
-    ...baseArgs,
+    ...baseArgsProfile,
 
     photo: {
-      ...baseArgs.photo,
+      ...baseArgsProfile.photo,
       value: '',
       display: false,
     },
 
     name: {
-      ...baseArgs.name,
+      ...baseArgsProfile.name,
       value: 'Pepe Elías García Fernández',
     },
 
     title: {
-      ...baseArgs.title,
+      ...baseArgsProfile.title,
       value: 'Senior Frontend Software Engineer',
     },
   },
@@ -192,25 +193,25 @@ export const LongContent: Story = {
   name: 'Contenido extenso',
 
   args: {
-    ...baseArgs,
+    ...baseArgsProfile,
 
     name: {
-      ...baseArgs.name,
+      ...baseArgsProfile.name,
       value: 'Pepe Elías García Fernández',
     },
 
     title: {
-      ...baseArgs.title,
+      ...baseArgsProfile.title,
       value: 'Senior Frontend Software Engineer',
     },
 
     photo: {
-      ...baseArgs.photo,
+      ...baseArgsProfile.photo,
       variant: 'square',
     },
 
     contact: {
-      ...baseArgs.contact,
+      ...baseArgsProfile.contact,
 
       variant: 'list',
     },

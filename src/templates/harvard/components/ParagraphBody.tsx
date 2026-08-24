@@ -2,7 +2,7 @@ import { cx } from '@/helper'
 import type React from 'react';
 
 interface AchievementsProps {
-  marker: string;
+  marker?: string;
   value: React.ReactNode;
 }
 

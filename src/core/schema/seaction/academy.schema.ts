@@ -9,7 +9,7 @@ import type {
 
 export interface AcademySchema extends BaseSchema {
 
-  items: Array<{
+  item?: {
     id?: string,
 
     name?: Field<React.ReactNode>;
@@ -21,5 +21,5 @@ export interface AcademySchema extends BaseSchema {
     period?: Field<React.ReactNode>;
 
     paragraph?: FieldParagraph<React.ReactNode>;
-  }>
+  }
 }

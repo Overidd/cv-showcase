@@ -2,7 +2,6 @@ import type React from 'react';
 
 import type {
   Field,
-  FieldCollections,
   FieldParagraph
 } from './schemaInterface';
 
@@ -19,15 +18,15 @@ export interface FieldHyperTextProps<TValue = React.ReactNode>
 
 export interface FieldParagraphProps<TValue = React.ReactNode>
   extends Omit<FieldParagraph<TValue>, 'isChangeDisplay' | 'marker' | 'value'> {
-  marker: NonNullable<FieldParagraph<TValue>['marker']>;
+  marker?: NonNullable<FieldParagraph<TValue>['marker']>;
   value: NonNullable<FieldParagraph<TValue>['value']>;
 }
 
-export interface FieldCollectionProps<TValue = React.ReactNode>
-  extends Omit<FieldCollections<TValue>, 'isChangeDisplay' | 'marker' | 'data'> {
-  marker: NonNullable<FieldCollections<TValue>['marker']>;
-  data: NonNullable<FieldCollections<TValue>['data']>;
-}
+// export interface FieldCollectionProps<TValue = React.ReactNode>
+//   extends Omit<FieldCollections<TValue>, 'isChangeDisplay' | 'marker' | 'data'> {
+//   marker: NonNullable<FieldCollections<TValue>['marker']>;
+//   data: NonNullable<FieldCollections<TValue>['data']>;
+// }
 
 /**
  * Props de un campo que utiliza una variante.

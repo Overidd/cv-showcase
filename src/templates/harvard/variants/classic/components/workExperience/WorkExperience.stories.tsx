@@ -2,6 +2,7 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { WorkExperience } from './WorkExperience';
 import type { WorkExperienceProps } from './workExperience.schema';
 import { withHarvardTheme } from '../../template/HarvardClassic.decorator';
+import { WorkExperienceItem } from './WorkExperienceItem';
 
 const meta = {
   title: 'Templates/Harvard/Classic/WorkExperience',
@@ -13,18 +14,31 @@ const meta = {
     layout: 'centered',
   },
 
+  excludeStories: ['baseArgsWorkExperienceData'],
+
   decorators: [withHarvardTheme],
+
+  argTypes: {
+    Item: {
+      control: false,
+      table: {
+        disable: true,
+      },
+    },
+  },
 
 } satisfies Meta<typeof WorkExperience>;
 
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-const workExperienceData: WorkExperienceProps = {
+export const baseArgsWorkExperienceData: WorkExperienceProps = {
   sectionName: {
     display: true,
     value: 'Experiencia Laboral'
   },
+
+  Item: WorkExperienceItem,
 
   items: [
     {
@@ -151,5 +165,5 @@ const workExperienceData: WorkExperienceProps = {
 
 export const LongContent: Story = {
   name: 'Contenido completo',
-  args: workExperienceData
+  args: baseArgsWorkExperienceData
 };

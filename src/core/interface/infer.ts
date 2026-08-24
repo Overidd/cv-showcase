@@ -1,7 +1,5 @@
 import type {
   Field,
-  FieldCollections,
-  FieldCollectionProps,
   FieldHypertext,
   FieldHyperTextProps,
   FieldProps,
@@ -27,12 +25,12 @@ export type InferParagraphSchema<
   ? FieldParagraphProps
   : never;
 
-export type InferCollectionSchema<
-  T,
-> =
-  T extends FieldCollections
-  ? FieldCollectionProps
-  : never;
+// export type InferCollectionSchema<
+//   T,
+// > =
+//   T extends FieldCollectionProps
+//   ? FieldCollectionProps
+//   : never;
 
 export type InferVariant<T> =
   T extends VariantConfig<infer TOptions>

@@ -8,6 +8,7 @@ import type {
 
 import {
   WorkExperience,
+  WorkExperienceItem,
   workExperienceSchema,
 } from '.';
 
@@ -30,6 +31,18 @@ export const workExperienceDefinition = {
   interconnections: [],
 
   component: WorkExperience,
+
+  item: {
+    component: WorkExperienceItem,
+
+    config: {
+      canAdd: true,
+      canDelete: true,
+      canDragAndDrop: true,
+      canDuplicate: true,
+      canEdit: true
+    }
+  },
 
   schema: workExperienceSchema,
 
