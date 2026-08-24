@@ -1,14 +1,13 @@
 import type {
-  InferFieldHypertextSchema,
   InferFieldSchema,
   InferParagraphSchema,
 } from '@/core/interface';
 
 import type {
-  WorkExperienceSchema,
-} from './workExperience.schema';
+  AcademySchema,
+} from './academy.schema';
 
-type InferWorkExperienceHistory<T> =
+type InferAcademyItems<T> =
   T extends Array<infer TItem>
   ? Array<
     {
@@ -17,19 +16,17 @@ type InferWorkExperienceHistory<T> =
       [K in keyof TItem as K extends 'id' ? never : K]:
       K extends 'paragraph'
       ? InferParagraphSchema<TItem[K]>
-      : K extends 'link'
-      ? InferFieldHypertextSchema<TItem[K]>
       : InferFieldSchema<TItem[K]>;
     }
   >
   : never;
 
-export type InferWorkExperienceSchema<
-  T extends WorkExperienceSchema
+export type InferAcademySchema<
+  T extends AcademySchema
 > = {
     [K in keyof T]:
     K extends 'items'
-    ? InferWorkExperienceHistory<T[K]>
+    ? InferAcademyItems<T[K]>
     : K extends 'sectionName'
     ? InferFieldSchema<T[K]>
     : K extends 'title'

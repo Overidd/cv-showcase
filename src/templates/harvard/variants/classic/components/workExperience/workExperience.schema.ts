@@ -9,7 +9,7 @@ export const workExperienceSchema = {
     isChangeDisplay: false,
     value: 'Experiencia Laboral'
   },
-  history: [
+  items: [
     {
       title: {
         display: true,
@@ -26,7 +26,7 @@ export const workExperienceSchema = {
         isChangeDisplay: true,
       },
 
-      achievement: {
+      paragraph: {
         display: true,
         isChangeDisplay: true,
         marker: 'circle',

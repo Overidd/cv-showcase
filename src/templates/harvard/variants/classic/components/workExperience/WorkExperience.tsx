@@ -7,18 +7,19 @@ import type {
 } from './workExperience.schema';
 
 import {
-  Achievement,
-  CompanyInfo,
+  ParagraphBody,
   Description,
-  JobTitle,
+  Title,
   Period,
   SectionTitle,
-  Location
+  Location,
+  Name,
+  Link
 } from '@/templates/harvard/components';
 
 export const WorkExperience = ({
   sectionName,
-  history,
+  items,
 }: WorkExperienceProps) => {
 
   return (
@@ -31,9 +32,9 @@ export const WorkExperience = ({
       <Separator className='separator' />
 
       {
-        history.map(({
+        items.map(({
           id,
-          achievement,
+          paragraph,
           companyName,
           description,
           link,
@@ -42,23 +43,35 @@ export const WorkExperience = ({
           title
         }) =>
           <article
-            className='work-experience__history'
+            className='work-experience__item'
             key={id}
           >
-            <div className='work-experience__header'>
-              <CompanyInfo
-                companyName={companyName}
-                link={link}
-              />
+            <div className='work-experience__item-header'>
+              <div className='work-experience__item-company-info'>
+                {companyName.display &&
+                  <Name
+                    value={companyName.value}
+                  />
+                }
+                {link.display &&
+                  <>
+                    <span className='experience__separator'>—</span>
+                    <Link
+                      href={link.href}
+                      value={link.value}
+                    />
+                  </>
+                }
+              </div>
 
               {location.display &&
                 <Location value={location.value} />
               }
             </div>
 
-            <div className='work-experience__subheader'>
+            <div className='work-experience__item-subheader'>
               {title.display &&
-                <JobTitle value={title.value} />
+                <Title value={title.value} />
               }
 
               {period.display &&
@@ -70,10 +83,10 @@ export const WorkExperience = ({
               <Description value={description.value} />
             }
 
-            {achievement.display &&
-              <Achievement
-                marker={achievement.marker}
-                value={achievement.value}
+            {paragraph.display &&
+              <ParagraphBody
+                marker={paragraph.marker}
+                value={paragraph.value}
               />
             }
           </article>

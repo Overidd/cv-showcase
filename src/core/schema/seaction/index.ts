@@ -10,3 +10,6 @@ export * from './summary.schema.infer';
 
 export * from './workExperience.schema'
 export * from './workExperience.schema.infer'
+
+export * from './academy.schema'
+export * from './academy.schema.infer'

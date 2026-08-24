@@ -7,7 +7,7 @@ interface NameProps {
   variant?: VariantName
 }
 
-export const Name = ({
+export const UserName = ({
   value,
   variant = 'uppercase'
 }: NameProps) => {

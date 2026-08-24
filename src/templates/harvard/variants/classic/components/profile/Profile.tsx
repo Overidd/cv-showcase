@@ -2,7 +2,7 @@ import './Profile.css'
 
 import {
   ContactInfo,
-  Name,
+  UserName,
   Photo
 } from '@/templates/harvard/components'
 
@@ -28,7 +28,7 @@ export const Profile = ({
       }
       <div className='profile-header__identity'>
         {name.display &&
-          <Name
+          <UserName
             value={name.value}
             variant={name.variant}
           />

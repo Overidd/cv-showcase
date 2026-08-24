@@ -1,6 +1,7 @@
 import type React from 'react';
 
 import type {
+  AcademySchema,
   ProfileSchema,
   SummarySchema,
   WorkExperienceSchema
@@ -15,6 +16,9 @@ export interface SectionConfigMap {
   };
   sectionWorkExperience: {
     schema: WorkExperienceSchema;
+  };
+  sectionAcademy: {
+    schema: AcademySchema
   }
 }
 

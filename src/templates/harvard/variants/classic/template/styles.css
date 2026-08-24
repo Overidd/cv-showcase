@@ -115,7 +115,7 @@ select {
 .cv-harvard {
   font-family: var(--cv-font-family);
   width: var(--cv-page-width);
-  height: var(--cv-page-height);
+  /* height: var(--cv-page-height); */
 
   padding: var(--cv-page-padding-top) var(--cv-page-padding-right) var(--cv-page-padding-bottom) var(--cv-page-padding-left);
 
@@ -137,4 +137,74 @@ select {
   width: 100%;
   border: 0;
   border-top: 1px solid var(--cv-color-border);
+}
+
+/* Title */
+.section-title {
+  font-size: var(--hc-fs-section);
+}
+
+.location,
+.period {
+  color: var(--hc-color-secondary);
+  font-size: var(--hc-fs-body);
+  line-height: var(--hc-line-height);
+  white-space: nowrap;
+}
+
+/* Job */
+.title {
+  margin: 0;
+  padding: 0;
+  color: var(--hc-color-secondary);
+  font-size: var(--hc-fs-body);
+  font-weight: 500;
+  line-height: var(--hc-line-height);
+}
+
+.description {
+  margin: 0;
+  padding: 0;
+  color: var(--hc-color-text);
+  font-size: var(--hc-fs-body);
+  line-height: var(--hc-line-height);
+}
+
+.paragraph-body {
+  margin: 0;
+
+  .paragraph-body__item {
+    font-size: inherit;
+    line-height: inherit;
+    max-width: 100%;
+    margin: 0;
+    padding: 0;
+    color: var(--hc-color-text);
+    font-size: var(--hc-fs-body);
+    line-height: var(--hc-line-height);
+  }
+}
+
+.name {
+  margin: 0;
+  padding: 0;
+  color: var(--hc-color-text);
+  font-size: var(--hc-fs-body);
+  font-weight: 600;
+  line-height: var(--hc-line-height);
+}
+
+.experience__separator {
+  color: var(--hc-color-muted);
+}
+
+.link {
+  color: var(--hc-color-secondary);
+  font-size: var(--hc-fs-body);
+  line-height: var(--hc-line-height);
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
 }

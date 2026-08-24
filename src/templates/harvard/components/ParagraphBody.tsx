@@ -6,17 +6,17 @@ interface AchievementsProps {
   value: React.ReactNode;
 }
 
-export const Achievement = ({
+export const ParagraphBody = ({
   marker,
   value,
 }: AchievementsProps) => {
   return (
     <div className={cx(
-      'achievement',
-      `achievement--${marker}`
+      'paragraph-body',
+      `paragraph-body--${marker}`
     )}>
       <p
-        className='paragraph achievement-item'
+        className='paragraph paragraph-body__item'
       >
         {value}
       </p>

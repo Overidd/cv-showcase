@@ -1,11 +1,11 @@
 
 import type {
   IconSmallType,
-} from '../../icons'
+} from '../icons'
 
 import {
   IconSmall
-} from '../../icons'
+} from '../icons'
 
 type ContactItemProps = {
   icon: IconSmallType;

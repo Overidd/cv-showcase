@@ -14,7 +14,7 @@ import type {
 export interface WorkExperienceSchema extends BaseSchema {
   /** Nombre de la empresa u organización. */
 
-  history: Array<{
+  items: Array<{
     id?: string,
 
     title?: Field<React.ReactNode>;
@@ -25,7 +25,7 @@ export interface WorkExperienceSchema extends BaseSchema {
     description?: Field<React.ReactNode>;
 
     /** Logros clave o tareas destacadas presentadas en una lista de viñetas. */
-    achievement?: FieldParagraph<React.ReactNode>;
+    paragraph?: FieldParagraph<React.ReactNode>;
 
     /** Ubicación geográfica o modalidad de trabajo (ej. Remoto, Presencial). */
     location?: Field<React.ReactNode>;

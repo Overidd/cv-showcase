@@ -11,6 +11,7 @@ import {
 import { profileDefinition } from '../components/profile'
 import { summaryDefinition } from '../components/summary';
 import { workExperienceDefinition } from '../components/workExperience';
+import { AcademyData, academyDefinition } from '../components/academy';
 
 export const HarvardClassic = () => {
 
@@ -63,7 +64,7 @@ export const HarvardClassic = () => {
       value: 'Experiencia Laboral'
     },
 
-    history: [
+    items: [
       {
         id: '1',
         title: {
@@ -81,7 +82,7 @@ export const HarvardClassic = () => {
           value: 'Responsable del desarrollo y mantenimiento de aplicaciones web utilizando React y TypeScript, liderando un equipo de 4 desarrolladores.'
         },
 
-        achievement: {
+        paragraph: {
           display: true,
           marker: 'circle' as const,
           value: 'Aumenté el rendimiento de la aplicación en un 40% mediante la optimización de renders.'
@@ -121,7 +122,7 @@ export const HarvardClassic = () => {
           value: 'Diseñé y desarrollé aplicaciones empresariales utilizando React, Node.js y PostgreSQL, participando en todo el ciclo de desarrollo del producto.'
         },
 
-        achievement: {
+        paragraph: {
           display: true,
           marker: 'circle' as const,
           value: 'Reduje el tiempo de carga de las aplicaciones en un 35% mediante mejoras en arquitectura, consultas y manejo del estado.'
@@ -161,7 +162,7 @@ export const HarvardClassic = () => {
           value: 'Participé en el desarrollo de sitios web y plataformas internas, implementando interfaces responsivas y componentes reutilizables con JavaScript y React.'
         },
 
-        achievement: {
+        paragraph: {
           display: true,
           marker: 'circle' as const,
           value: 'Implementé una biblioteca de componentes reutilizables que redujo significativamente el tiempo de desarrollo de nuevas interfaces.'
@@ -202,6 +203,11 @@ export const HarvardClassic = () => {
       <workExperienceDefinition.component
         {...baseArgsWorkExperienceData}
       />
+
+      <academyDefinition.component
+        {...AcademyData}
+      />
+
     </div>
   )
 }
