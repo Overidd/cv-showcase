@@ -4,6 +4,7 @@ import type {
   AcademySchema,
   LanguageSchema,
   ProfileSchema,
+  ProjectSchema,
   SkillSchema,
   SummarySchema,
   WorkExperienceSchema
@@ -28,7 +29,11 @@ export interface SectionConfigMap {
 
   sectionLanguage: {
     schema: LanguageSchema
-  }
+  },
+
+  sectionProyect: {
+    schema: ProjectSchema;
+  };
 }
 
 export type SectionKey = keyof SectionConfigMap;

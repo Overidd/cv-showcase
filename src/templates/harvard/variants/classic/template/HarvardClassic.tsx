@@ -14,6 +14,7 @@ import { workExperienceDefinition } from '../components/workExperience';
 import { academyDefinition } from '../components/academy';
 import { skillDefinition } from '../components/skill'
 import { languageDefinition } from '../components/language'
+import { projectDefinition } from '../components/project';
 
 import { baseArgsProfile } from '../components/profile/Profile.stories'
 import { baseArgsSummary } from '../components/summary/Summary.stories'
@@ -21,6 +22,7 @@ import { baseArgsWorkExperienceData } from '../components/workExperience/WorkExp
 import { academyData } from '../components/academy/Academy.stories';
 import { baseArgsSkill } from '../components/skill/Skill.stories';
 import { baseArgsLenguage } from '../components/language/Language.stories';
+import { baseArgsProjectData } from '../components/project/Project.stories';
 
 export const HarvardClassic = () => {
 
@@ -39,6 +41,10 @@ export const HarvardClassic = () => {
 
       <workExperienceDefinition.component
         {...baseArgsWorkExperienceData}
+      />
+
+      <projectDefinition.component
+        {...baseArgsProjectData}
       />
 
       <academyDefinition.component

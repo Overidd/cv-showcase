@@ -17,5 +17,8 @@ export * from './academy.schema.infer';
 export * from './skill.schema';
 export * from './skill.schema.infer';
 
-export * from './language.schema'
-export * from './language.schema.infer'
+export * from './language.schema';
+export * from './language.schema.infer';
+
+export * from './project.schema';
+export * from './proyect.schema.infer';
