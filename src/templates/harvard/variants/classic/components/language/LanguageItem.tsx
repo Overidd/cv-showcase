@@ -18,6 +18,7 @@ export const LanguageItem = ({
           range={language.value.range}
           label={language.value.label}
           value={language.value.value}
+          Controller={language.value.Controller}
         />
       }
       {language.variant !== 'progress-bar' &&

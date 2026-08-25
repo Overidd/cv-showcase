@@ -1,3 +1,5 @@
+import type React from 'react';
+
 import type {
   Field,
   FieldHypertext,
@@ -7,7 +9,6 @@ import type {
 import type {
   BaseSchema
 } from './base.schema';
-import type React from 'react';
 
 /**
  * Representa la sección de proyectos para perfiles de usuario o currículums.

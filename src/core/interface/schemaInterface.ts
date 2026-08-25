@@ -1,8 +1,11 @@
+import type React from 'react';
 
 export interface TValueRange<TValue = string> {
   value: TValue,
   range: number,
   label: string,
+
+  Controller: React.ComponentType<React.PropsWithChildren>
   // type: 'react-node' | 'date' | 'range',
 }
 

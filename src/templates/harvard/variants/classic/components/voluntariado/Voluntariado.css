@@ -1,0 +1,21 @@
+.voluntariado {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hc-space-component) 0;
+}
+
+.voluntariado__item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hc-space-body) 0;
+}
+
+/* Header & Subheader */
+.voluntariado__item-header,
+.voluntariado__item-subheader {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: var(--hc-space-body) 0;
+}

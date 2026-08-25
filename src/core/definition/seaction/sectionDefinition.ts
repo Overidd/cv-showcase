@@ -2,11 +2,15 @@ import type React from 'react';
 
 import type {
   AcademySchema,
+  AchievementSchema,
+  CertificationSchema,
   LanguageSchema,
+  PersonalizedSchema,
   ProfileSchema,
   ProjectSchema,
   SkillSchema,
   SummarySchema,
+  VoluntariadoSchema,
   WorkExperienceSchema
 } from '@/core/schema';
 
@@ -33,6 +37,22 @@ export interface SectionConfigMap {
 
   sectionProyect: {
     schema: ProjectSchema;
+  };
+
+  sectionAchievement: {
+    schema: AchievementSchema;
+  };
+
+  sectionCertification: {
+    schema: CertificationSchema;
+  };
+
+  sectionVoluntariado: {
+    schema: VoluntariadoSchema;
+  };
+
+  sectionPersonalized: {
+    schema: PersonalizedSchema;
   };
 }
 

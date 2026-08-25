@@ -21,4 +21,16 @@ export * from './language.schema';
 export * from './language.schema.infer';
 
 export * from './project.schema';
-export * from './proyect.schema.infer';
+export * from './project.schema.infer';
+
+export * from './achievement.schema';
+export * from './achievement.schema.infer';
+
+export * from './certification.schema';
+export * from './certification.schema.infer';
+
+export * from './voluntariado.schema';
+export * from './voluntariado.schema.infer';
+
+export * from './personalized.schema';
+export * from './personalized.schema.infer';

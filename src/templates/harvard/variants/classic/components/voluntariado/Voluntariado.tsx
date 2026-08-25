@@ -1,24 +1,24 @@
-import './Project.css';
+import './Voluntariado.css';
 
 import {
   Separator
 } from '@/shared/components';
 
 import type {
-  ProjectProps
-} from './project.schema';
+  VoluntariadoProps
+} from './voluntariado.schema';
 
 import {
   SectionTitle,
 } from '@/templates/harvard/components';
 
-export const Project = ({
-  sectionName,
+export const Voluntariado = ({
+  Item,
   items,
-  Item
-}: ProjectProps) => {
+  sectionName,
+}: VoluntariadoProps) => {
   return (
-    <section className='project'>
+    <section className='voluntariado'>
       {sectionName.display && (
         <SectionTitle value={sectionName.value} />
       )}

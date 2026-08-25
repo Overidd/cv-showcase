@@ -26,12 +26,18 @@ export const SkillItem = ({
         <ul className={`skill__collection skill__collection--${group.variant}`}>
 
           {group.variant === 'progress-bar' &&
-            group.values.map(({ range, label, value }) => (
+            group.values.map(({
+              range,
+              label,
+              value,
+              Controller
+            }) => (
               <li className='skill__collection-item paragraph'>
                 <ProgressBar
                   range={range}
                   label={label}
                   value={value}
+                  Controller={Controller}
                 />
               </li>
             ))

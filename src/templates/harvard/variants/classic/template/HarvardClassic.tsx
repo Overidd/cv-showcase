@@ -15,6 +15,10 @@ import { academyDefinition } from '../components/academy';
 import { skillDefinition } from '../components/skill'
 import { languageDefinition } from '../components/language'
 import { projectDefinition } from '../components/project';
+import { achievementDefinition } from '../components/achievement';
+import { certificationDefinition } from '../components/certification';
+import { voluntariadoDefinition } from '../components/voluntariado';
+import { personalizedDefinition } from '../components/personalized';
 
 import { baseArgsProfile } from '../components/profile/Profile.stories'
 import { baseArgsSummary } from '../components/summary/Summary.stories'
@@ -23,6 +27,10 @@ import { academyData } from '../components/academy/Academy.stories';
 import { baseArgsSkill } from '../components/skill/Skill.stories';
 import { baseArgsLenguage } from '../components/language/Language.stories';
 import { baseArgsProjectData } from '../components/project/Project.stories';
+import { baseArgsAchievementData } from '../components/achievement/Achievement.stories';
+import { baseArgsCertificationData } from '../components/certification/Certification.stories';
+import { baseArgsVoluntariadoData } from '../components/voluntariado/Voluntariado.stories';
+import { baseArgsPersonalizedData } from '../components/personalized/Personalized.stories';
 
 export const HarvardClassic = () => {
 
@@ -45,6 +53,22 @@ export const HarvardClassic = () => {
 
       <projectDefinition.component
         {...baseArgsProjectData}
+      />
+
+      <achievementDefinition.component
+        {...baseArgsAchievementData}
+      />
+
+      <certificationDefinition.component
+        {...baseArgsCertificationData}
+      />
+
+      <voluntariadoDefinition.component
+        {...baseArgsVoluntariadoData}
+      />
+
+      <personalizedDefinition.component
+        {...baseArgsPersonalizedData}
       />
 
       <academyDefinition.component

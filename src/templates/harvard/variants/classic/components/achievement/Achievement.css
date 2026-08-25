@@ -1,0 +1,29 @@
+.achievement {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hc-space-component) 0;
+}
+
+.achievement__group {
+  width: 100%;
+}
+
+.achievement__group--list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hc-space-body) 0;
+}
+
+.achievement__group--card,
+.achievement__group--cart {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--hc-space-component);
+}
+
+.achievement__item {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--hc-space-body) / 2) 0;
+}

@@ -27,7 +27,7 @@ export const skillSchema = {
       variant: defineVariant({
         value: 'list',
         options: ['vignette', 'list', 'progress-bar']
-      })
+      }),
     }
   }
 

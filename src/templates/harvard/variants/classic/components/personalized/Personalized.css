@@ -1,0 +1,29 @@
+.personalized {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: var(--hc-space-component) 0;
+}
+
+.personalized__group {
+  width: 100%;
+}
+
+.personalized__group--list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--hc-space-body) 0;
+}
+
+.personalized__group--card,
+.personalized__group--cart {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--hc-space-component);
+}
+
+.personalized__item {
+  display: flex;
+  flex-direction: column;
+  gap: calc(var(--hc-space-body) / 2) 0;
+}

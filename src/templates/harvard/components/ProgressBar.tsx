@@ -5,12 +5,14 @@ interface ProgressBarProps {
   value: string | React.ReactNode;
   range: number;
   label?: string;
+  Controller: React.ComponentType<React.PropsWithChildren>;
 }
 
 export function ProgressBar({
   value,
   label,
   range,
+  Controller
 }: ProgressBarProps) {
   return (
     <div className='progress'>
@@ -20,12 +22,14 @@ export function ProgressBar({
         </p>
       </div>
 
-      <div className='progress__bar'>
-        <div
-          className='progress__value'
-          style={{ width: `${range}%` }}
-        />
-      </div>
+      <Controller>
+        <div className='progress__bar'>
+          <div
+            className='progress__value'
+            style={{ width: `${range}%` }}
+          />
+        </div>
+      </Controller>
 
       {label && (
         <Title value={label} />

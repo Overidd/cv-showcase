@@ -52,7 +52,8 @@ export const baseArgsLenguage: LanguageProps = {
         value: {
           value: 'Español',
           label: 'Nativo',
-          range: 100
+          range: 100,
+          Controller: ({ children }) => <>{children}</>
         }
       }
     },
@@ -64,7 +65,8 @@ export const baseArgsLenguage: LanguageProps = {
         value: {
           value: 'Inglés',
           label: 'Avanzado',
-          range: 85
+          range: 85,
+          Controller: ({ children }) => <>{children}</>
         }
       }
     },
@@ -76,7 +78,8 @@ export const baseArgsLenguage: LanguageProps = {
         value: {
           value: 'Portugués',
           label: 'Intermedio',
-          range: 65
+          range: 65,
+          Controller: ({ children }) => <>{children}</>
         }
       }
     }

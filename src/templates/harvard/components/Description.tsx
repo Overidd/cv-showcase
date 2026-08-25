@@ -7,7 +7,7 @@ export const Description = ({
   value,
 }: DescriptionProps) => {
   return (
-    <p className='description'>
+    <p className='description paragraph'>
       {value}
     </p>
   )

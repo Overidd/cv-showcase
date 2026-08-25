@@ -136,12 +136,17 @@ select {
 .separator {
   width: 100%;
   border: 0;
+  margin: 0;
   border-top: 1px solid var(--cv-color-border);
+  /* margin: calc(2 / var(--hc-space-component)) 0; */
+
+  /* margin-bottom: -0px; */
 }
 
 /* Title */
 .section-title {
   font-size: var(--hc-fs-section);
+  /* margin-bottom: -10px; */
 }
 
 .location,
