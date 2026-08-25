@@ -1,5 +1,6 @@
 import {
-  Name
+  Name,
+  ProgressBar
 } from '@/templates/harvard/components'
 
 import type {
@@ -20,16 +21,29 @@ export const SkillItem = ({
         />
       }
 
-      {/* "list" | "vignette" */}
+      {/* "list" | "vignette" | "progress-bar" */}
       {collection.display &&
         <ul className={`skill__collection skill__collection--${collection.variant}`}>
 
-          {collection.values.map((value) => (
-            <li className='skill__collection-item paragraph'>
-              {value}
-            </li>
-          ))}
+          {collection.variant === 'progress-bar' &&
+            collection.values.map(({ range, label, value }) => (
+              <li className='skill__collection-item paragraph'>
+                <ProgressBar
+                  range={range}
+                  label={label}
+                  value={value}
+                />
+              </li>
+            ))
+          }
 
+          {collection.variant !== 'progress-bar' &&
+            collection.values.map(({ value }) => (
+              <li className='skill__collection-item paragraph'>
+                {value}
+              </li>
+            ))
+          }
         </ul>
       }
     </article>

@@ -26,7 +26,7 @@ export const skillSchema = {
       isChangeDisplay: true,
       variant: defineVariant({
         value: 'list',
-        options: ['vignette', 'list']
+        options: ['vignette', 'list', 'progress-bar']
       })
     }
   }

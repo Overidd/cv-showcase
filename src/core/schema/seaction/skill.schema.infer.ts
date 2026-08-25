@@ -4,6 +4,7 @@ import type {
   InferFieldCollectionSchema,
   InferFieldSchema,
   InferVariant,
+  TValueRange,
 } from '@/core/interface';
 
 import type {
@@ -19,7 +20,7 @@ export type InferSkillItemSchema<
     K extends 'collection'
     ? InferFieldCollectionSchema<
       NonNullable<T['item']>[K],
-      React.ReactNode[]
+      TValueRange<React.ReactNode>[]
     > & (
       'variant' extends keyof NonNullable<T['item']>[K]
       ? {

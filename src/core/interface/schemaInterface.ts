@@ -1,4 +1,12 @@
-// Base field
+
+export interface TValueRange<TValue = string> {
+  value: TValue,
+  range: number,
+  label: string,
+  // type: 'react-node' | 'date' | 'range',
+}
+
+//---------------------- Base field
 export interface Field<TValue = string> {
   value?: TValue;
   display: boolean;

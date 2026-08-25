@@ -1,6 +1,7 @@
 import type {
   Field,
   FieldCollection,
+  TValueRange,
   VariantConfig
 } from '@/core/interface';
 
@@ -14,7 +15,7 @@ export interface SkillSchema extends BaseSchema {
 
     name?: Field<React.ReactNode>;
 
-    collection?: FieldCollection<React.ReactNode> & {
+    collection?: FieldCollection<TValueRange<React.ReactNode>> & {
       variant: VariantConfig<readonly string[]>;
     }
   }

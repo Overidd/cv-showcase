@@ -38,11 +38,15 @@
     list-style-type: disc;
   }
 
+  &.skill__collection--progress-bar {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--hc-space-body) var(--hc-space-body);
+  }
 
   .skill__collection-item {
     font-size: var(--hc-fs-body);
     line-height: var(--hc-line-height);
     color: var(--hc-color-text);
   }
-
 }
