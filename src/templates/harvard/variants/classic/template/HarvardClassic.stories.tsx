@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import { HarvardClassic } from './HarvardClassic';
+import { HarvardClassic } from './HarvardClassicCopy';
 
 const meta = {
   title: 'Templates/Harvard/Classic/Template',

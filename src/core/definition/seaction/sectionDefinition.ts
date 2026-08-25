@@ -14,26 +14,31 @@ import type {
   WorkExperienceSchema
 } from '@/core/schema';
 
+
 export interface SectionConfigMap {
   sectionProfile: {
     schema: ProfileSchema;
   };
+
   sectionSummary: {
     schema: SummarySchema;
   };
+
   sectionWorkExperience: {
     schema: WorkExperienceSchema;
   };
+
   sectionAcademy: {
-    schema: AcademySchema
-  },
+    schema: AcademySchema;
+  };
+
   sectionSkill: {
-    schema: SkillSchema
-  },
+    schema: SkillSchema;
+  };
 
   sectionLanguage: {
-    schema: LanguageSchema
-  },
+    schema: LanguageSchema;
+  };
 
   sectionProyect: {
     schema: ProjectSchema;
@@ -58,7 +63,8 @@ export interface SectionConfigMap {
 
 export type SectionKey = keyof SectionConfigMap;
 
-export type SectionSchema = SectionConfigMap[SectionKey]['schema'];
+export type SectionSchema =
+  SectionConfigMap[SectionKey]['schema'];
 
 export type SectionKeyFromSchema<TSchema> = {
   [K in SectionKey]:
@@ -67,10 +73,10 @@ export type SectionKeyFromSchema<TSchema> = {
   : never;
 }[SectionKey];
 
-export type SectionDefinition<
+export interface SectionDefinition<
   TSchema extends SectionSchema,
-  TProps = unknown,
-> = {
+  TProps,
+> {
   key: SectionKeyFromSchema<TSchema>;
 
   name: string;
@@ -100,11 +106,44 @@ export type SectionDefinition<
     >;
 
     config: {
-      canAdd: boolean,
-      canDelete: boolean,
-      canDuplicate: boolean,
-      canDragAndDrop: boolean,
-      canEdit: boolean,
-    },
-  },
-};
+      canAdd: boolean;
+      canDelete: boolean;
+      canDuplicate: boolean;
+      canDragAndDrop: boolean;
+      canEdit: boolean;
+    };
+  };
+}
+
+export interface AnySectionDefinition {
+  key: SectionKey;
+
+  name: string;
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  component: React.ComponentType<any>;
+
+  interconnections: SectionKey[];
+
+  config: {
+    canDuplicate: boolean;
+    canDragAndDrop: boolean;
+    canEdit: boolean;
+    canDelete: boolean;
+  };
+
+  schema: SectionSchema;
+
+  item?: {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    component: React.ComponentType<any>;
+
+    config: {
+      canAdd: boolean;
+      canDelete: boolean;
+      canDuplicate: boolean;
+      canDragAndDrop: boolean;
+      canEdit: boolean;
+    };
+  };
+}

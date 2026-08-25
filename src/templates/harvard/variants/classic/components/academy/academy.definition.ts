@@ -7,6 +7,7 @@ import type {
 } from '@/core/schema';
 
 import type {
+  AcademyItemProps,
   AcademyProps
 } from './academy.schema';
 
