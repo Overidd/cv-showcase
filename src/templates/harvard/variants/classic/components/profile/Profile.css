@@ -39,7 +39,7 @@
   flex-direction: column;
   align-items: center;
 
-  gap: calc(var(--hc-space-item) - 5px) 0;
+  gap: calc(var(--hc-space-body) - 5px) 0;
 
   /* Name */
   .name {
@@ -61,7 +61,7 @@
   }
 
   & p {
-    margin: var(--hc-space-item) 0 0;
+    margin: var(--hc-space-body) 0 0;
     color: var(--hc-color-secondary);
     font-size: var(--hc-fs-title);
     line-height: var(--hc-line-height);
@@ -75,7 +75,7 @@
   align-items: center;
   justify-content: center;
 
-  gap: calc(var(--hc-space-item) - 10px) var(--hc-space-item);
+  gap: calc(var(--hc-space-body) - 10px) var(--hc-space-body);
 
   /* Contact Info - List */
   &.contact-info--list {
@@ -129,4 +129,4 @@
       }
     }
   }
-}
+}

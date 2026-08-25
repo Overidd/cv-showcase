@@ -8,7 +8,7 @@
 .academy__item {
   display: flex;
   flex-direction: column;
-  gap: var(--hc-space-item) 0;
+  gap: var(--hc-space-body) 0;
 }
 
 .academy__item-header,
@@ -16,5 +16,5 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: var(--hc-space-item) 0;
+  gap: var(--hc-space-body) 0;
 }

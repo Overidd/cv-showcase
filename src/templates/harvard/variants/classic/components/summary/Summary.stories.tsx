@@ -26,7 +26,6 @@ const meta = {
       },
     },
   },
-
 } satisfies Meta<typeof summaryDefinition.component>;
 
 export default meta;

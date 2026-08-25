@@ -5,8 +5,33 @@ import type {
   FieldProps,
   VariantConfig,
   FieldParagraph,
-  FieldParagraphProps
+  FieldParagraphProps,
+  FieldCollectionProps,
+  FieldCollection
 } from '@/core/interface';
+
+export type InferFieldCollectionSchema<
+  T,
+  TValue = React.ReactNode[]
+> =
+  T extends FieldCollection
+  ? FieldCollectionProps<TValue>
+  : never;
+
+/*
+export type InferFieldCollectionSchema<
+  T,
+  TValue = React.ReactNode[]
+> =
+  T extends FieldCollection
+    ? FieldCollectionProps<TValue> &
+      ('variant' extends keyof T
+        ? {
+            variant: InferVariant<T['variant']>;
+          }
+        : {})
+    : never;
+*/
 
 export type InferFieldSchema<T, FieldValue = React.ReactNode> =
   T extends Field

@@ -2,8 +2,15 @@ import type React from 'react';
 
 import type {
   Field,
+  FieldCollection,
   FieldParagraph
 } from './schemaInterface';
+
+
+export interface FieldCollectionProps<TValue = React.ReactNode[]>
+  extends Omit<FieldCollection<TValue>, 'isChangeDisplay' | 'values'> {
+  values: TValue;
+}
 
 export interface FieldProps<TValue = React.ReactNode>
   extends Omit<Field<TValue>, 'isChangeDisplay' | 'value'> {

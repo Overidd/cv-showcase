@@ -106,7 +106,7 @@ select {
   --hc-space-component: var(--cv-spacing-component);
 
   /* Calcula el espacio entre elementos individuales sumando un fijo de 0.5rem al valor de espaciado base */
-  --hc-space-item: calc(0.5rem + var(--cv-spacing-item));
+  --hc-space-body: calc(0.5rem + var(--cv-spacing-item));
   /* --- Base --- */
   font-family: var(--cv-font-family);
 }

@@ -1,7 +1,7 @@
 .summary {
   display: flex;
   flex-direction: column;
-  gap: var(--hc-space-item) 0;
+  gap: var(--hc-space-body) 0;
 }
 
 .summary__paragraph {
@@ -11,4 +11,4 @@
   font-size: var(--hc-fs-body);
   line-height: var(--hc-line-height);
   color: var(--hc-color-text);
-}
+}

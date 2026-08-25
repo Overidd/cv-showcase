@@ -5,6 +5,12 @@ export interface Field<TValue = string> {
   isChangeDisplay: boolean;
 }
 
+export interface FieldCollection<TValue = string> {
+  values?: TValue[];
+  display: boolean;
+  isChangeDisplay: boolean;
+}
+
 export interface FieldHypertext<TValue = string> {
   value?: TValue;
   href?: string;

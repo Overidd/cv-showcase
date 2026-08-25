@@ -8,7 +8,7 @@
 .work-experience__item {
   display: flex;
   flex-direction: column;
-  gap: var(--hc-space-item) 0;
+  gap: var(--hc-space-body) 0;
 }
 
 /* Header */
@@ -17,11 +17,11 @@
   display: flex;
   align-items: baseline;
   justify-content: space-between;
-  gap: var(--hc-space-item) 0;
+  gap: var(--hc-space-body) 0;
 }
 
 .work-experience__item-company-info {
   display: flex;
   align-items: baseline;
-  gap: var(--hc-space-item);
+  gap: var(--hc-space-body);
 }

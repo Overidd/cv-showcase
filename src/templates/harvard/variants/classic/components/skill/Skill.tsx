@@ -1,25 +1,25 @@
-import './WorkExperience.css';
+import './Skill.css';
 
 import {
   Separator
 } from '@/shared/components';
 
-import type {
-  WorkExperienceProps
-} from './workExperience.schema';
-
 import {
-  SectionTitle,
+  SectionTitle
 } from '@/templates/harvard/components';
 
-export const WorkExperience = ({
+import type {
+  SkillProps
+} from './skill.schema'
+
+export const Skill = ({
   sectionName,
   items,
   Item
-}: WorkExperienceProps) => {
+}: SkillProps) => {
 
   return (
-    <section className='work-experience'>
+    <section className='skill'>
 
       {sectionName.display &&
         <SectionTitle value={sectionName.value} />
@@ -27,12 +27,12 @@ export const WorkExperience = ({
 
       <Separator className='separator' />
 
-      {items.map((data) =>
+      {items.map((data) => (
         <Item
           key={data.id}
           {...data}
         />
-      )}
+      ))}
     </section>
   )
 }
