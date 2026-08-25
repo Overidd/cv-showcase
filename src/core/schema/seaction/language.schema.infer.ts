@@ -1,26 +1,26 @@
 import type React from 'react';
 
 import type {
-  InferFieldCollectionSchema,
   InferFieldSchema,
   InferVariant,
   TValueRange,
 } from '@/core/interface';
 
 import type {
-  SkillSchema,
-} from './skill.schema';
+  LanguageSchema,
+} from './language.schema';
 
-export type InferSkillItemSchema<
-  T extends SkillSchema
+
+export type InferLanguageItemSchema<
+  T extends LanguageSchema
 > = {
   id: string;
 } & {
     [K in keyof NonNullable<T['item']> as K extends 'id' ? never : K]:
-    K extends 'group'
-    ? InferFieldCollectionSchema<
+    K extends 'language'
+    ? InferFieldSchema<
       NonNullable<T['item']>[K],
-      TValueRange<React.ReactNode>[]
+      TValueRange<React.ReactNode>
     > & (
       'variant' extends keyof NonNullable<T['item']>[K]
       ? {
@@ -35,21 +35,24 @@ export type InferSkillItemSchema<
     >;
   };
 
-export type InferSkillSchema<
-  T extends SkillSchema
+
+export type InferLanguageSchema<
+  T extends LanguageSchema
 > = {
   [K in keyof T as K extends 'item' ? 'items' : K]:
   K extends 'sectionName'
   ? InferFieldSchema<T[K]>
+  : K extends 'title'
+  ? InferFieldSchema<T[K]>
   : K extends 'item'
-  ? Array<InferSkillItemSchema<T>>
+  ? Array<InferLanguageItemSchema<T>>
   : never;
 } & (
     T['item'] extends undefined
     ? Record<string, never>
     : {
       Item: React.ComponentType<
-        InferSkillItemSchema<T>
+        InferLanguageItemSchema<T>
       >;
     }
   );

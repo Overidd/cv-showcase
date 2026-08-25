@@ -21,7 +21,7 @@ export const skillSchema = {
       isChangeDisplay: true
     },
 
-    collection: {
+    group: {
       display: true,
       isChangeDisplay: true,
       variant: defineVariant({

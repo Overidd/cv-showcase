@@ -9,7 +9,7 @@ import type {
 
 export const SkillItem = ({
   name,
-  collection,
+  group,
 }: SkillItemProps) => {
 
   return (
@@ -22,11 +22,11 @@ export const SkillItem = ({
       }
 
       {/* "list" | "vignette" | "progress-bar" */}
-      {collection.display &&
-        <ul className={`skill__collection skill__collection--${collection.variant}`}>
+      {group.display &&
+        <ul className={`skill__collection skill__collection--${group.variant}`}>
 
-          {collection.variant === 'progress-bar' &&
-            collection.values.map(({ range, label, value }) => (
+          {group.variant === 'progress-bar' &&
+            group.values.map(({ range, label, value }) => (
               <li className='skill__collection-item paragraph'>
                 <ProgressBar
                   range={range}
@@ -37,8 +37,8 @@ export const SkillItem = ({
             ))
           }
 
-          {collection.variant !== 'progress-bar' &&
-            collection.values.map(({ value }) => (
+          {group.variant !== 'progress-bar' &&
+            group.values.map(({ value }) => (
               <li className='skill__collection-item paragraph'>
                 {value}
               </li>

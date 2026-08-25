@@ -49,7 +49,7 @@ export const baseArgsSkill: SkillProps = {
         display: true,
       },
 
-      collection: {
+      group: {
         display: true,
         variant: 'vignette',
         values: [
@@ -71,7 +71,7 @@ export const baseArgsSkill: SkillProps = {
         display: true,
       },
 
-      collection: {
+      group: {
         display: true,
         variant: 'progress-bar',
         values: [
@@ -92,7 +92,7 @@ export const baseArgsSkill: SkillProps = {
         display: true,
       },
 
-      collection: {
+      group: {
         display: true,
         variant: 'list',
         values: [
@@ -112,7 +112,7 @@ export const baseArgsSkill: SkillProps = {
         display: true,
       },
 
-      collection: {
+      group: {
         display: true,
         variant: 'list',
         values: [
@@ -133,7 +133,7 @@ export const baseArgsSkill: SkillProps = {
         display: true,
       },
 
-      collection: {
+      group: {
         display: true,
         variant: 'list',
         values: [
@@ -153,7 +153,7 @@ export const baseArgsSkill: SkillProps = {
         display: true,
       },
 
-      collection: {
+      group: {
         display: true,
         variant: 'list',
         values: [

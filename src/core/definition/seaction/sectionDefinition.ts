@@ -2,6 +2,7 @@ import type React from 'react';
 
 import type {
   AcademySchema,
+  LanguageSchema,
   ProfileSchema,
   SkillSchema,
   SummarySchema,
@@ -23,6 +24,10 @@ export interface SectionConfigMap {
   },
   sectionSkill: {
     schema: SkillSchema
+  },
+
+  sectionLanguage: {
+    schema: LanguageSchema
   }
 }
 
