@@ -4,6 +4,7 @@ import type {
   InferFieldHypertextSchema,
   InferFieldSchema,
   InferParagraphSchema,
+  InferVariant,
 } from '@/core/interface';
 
 import type {
@@ -15,28 +16,35 @@ export type InferProjectItemSchema<
 > = {
   id: string;
 } & {
-    [K in keyof NonNullable<T['item']> as K extends 'id' ? never : K]:
+    [K in keyof NonNullable<NonNullable<T['collection']>['item']> as K extends 'id' ? never : K]:
     K extends 'paragraph'
-    ? InferParagraphSchema<NonNullable<T['item']>[K]>
+    ? InferParagraphSchema<NonNullable<NonNullable<T['collection']>['item']>[K]>
     : K extends 'link'
-    ? InferFieldHypertextSchema<NonNullable<T['item']>[K]>
-    : InferFieldSchema<NonNullable<T['item']>[K]>;
+    ? InferFieldHypertextSchema<NonNullable<NonNullable<T['collection']>['item']>[K]>
+    : InferFieldSchema<NonNullable<NonNullable<T['collection']>['item']>[K]>;
   };
 
 export type InferProjectSchema<
   T extends ProjectSchema
 > = {
-  [K in keyof T as K extends 'item' ? 'items' : K]:
+  [K in keyof T as K extends 'collection' ? never : K]:
   K extends 'sectionName'
   ? InferFieldSchema<T[K]>
-  : K extends 'item'
-  ? Array<InferProjectItemSchema<T>>
   : never;
 } & (
-    T['item'] extends undefined
-    ? Record<string, never>
+    NonNullable<T['collection']> extends never | undefined
+    ? unknown
     : {
-      Item: React.ComponentType<
+      collection: {
+        items: Array<InferProjectItemSchema<T>>;
+      } & (
+        'variant' extends keyof NonNullable<T['collection']>
+        ? {
+          variant: InferVariant<NonNullable<NonNullable<T['collection']>['variant']>>;
+        }
+        : unknown
+      );
+      SectionItem: React.ComponentType<
         InferProjectItemSchema<T>
       >;
     }

@@ -15,22 +15,22 @@ export const achievementSchema = {
     isChangeDisplay: false,
   },
 
-  group: {
+  collection: {
     variant: defineVariant({
       value: 'card',
       options: ['card', 'list', 'cart'],
     }),
-  },
 
-  item: {
-    name: {
-      display: true,
-      isChangeDisplay: true,
-    },
+    item: {
+      name: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    description: {
-      display: true,
-      isChangeDisplay: true,
+      description: {
+        display: true,
+        isChangeDisplay: true,
+      },
     },
   },
 } satisfies AchievementSchema;

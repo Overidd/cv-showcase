@@ -19,7 +19,7 @@ const meta = {
   decorators: [withHarvardTheme],
 
   argTypes: {
-    Item: {
+    SectionItem: {
       control: false,
       table: {
         disable: true,
@@ -37,48 +37,49 @@ export const baseArgsVoluntariadoData: VoluntariadoProps = {
     value: 'Voluntariado',
   },
 
-  Item: VoluntariadoItem,
-
-  items: [
-    {
-      id: '1',
-      name: {
-        display: true,
-        value: 'Nombre de la Organización',
+  SectionItem: VoluntariadoItem,
+  collection: {
+    items: [
+      {
+        id: '1',
+        name: {
+          display: true,
+          value: 'Nombre de la Organización',
+        },
+        title: {
+          display: true,
+          value: 'Título',
+        },
+        date: {
+          display: true,
+          value: 'Período de fechas',
+        },
+        description: {
+          display: true,
+          value: 'Describe la organización o el proyecto en el que trabajaste.',
+        },
       },
-      title: {
-        display: true,
-        value: 'Título',
+      {
+        id: '2',
+        name: {
+          display: true,
+          value: 'Cruz Roja Internacional',
+        },
+        title: {
+          display: true,
+          value: 'Coordinador de Voluntarios',
+        },
+        date: {
+          display: true,
+          value: '2022 - 2023',
+        },
+        description: {
+          display: true,
+          value: 'Lideré iniciativas de apoyo comunitario y gestión logística para campañas de salud.',
+        },
       },
-      date: {
-        display: true,
-        value: 'Período de fechas',
-      },
-      description: {
-        display: true,
-        value: 'Describe la organización o el proyecto en el que trabajaste.',
-      },
-    },
-    {
-      id: '2',
-      name: {
-        display: true,
-        value: 'Cruz Roja Internacional',
-      },
-      title: {
-        display: true,
-        value: 'Coordinador de Voluntarios',
-      },
-      date: {
-        display: true,
-        value: '2022 - 2023',
-      },
-      description: {
-        display: true,
-        value: 'Lideré iniciativas de apoyo comunitario y gestión logística para campañas de salud.',
-      },
-    },
-  ],
+    ],
+  }
 };
 
 export const Default: Story = {

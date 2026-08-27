@@ -14,7 +14,7 @@ export type InferFieldCollectionSchema<
   T,
   TValue = React.ReactNode[]
 > =
-  T extends FieldCollection
+  T extends FieldCollection<unknown>
   ? FieldCollectionProps<TValue>
   : never;
 
@@ -34,19 +34,19 @@ export type InferFieldCollectionSchema<
 */
 
 export type InferFieldSchema<T, FieldValue = React.ReactNode> =
-  T extends Field
+  T extends Field<unknown>
   ? FieldProps<FieldValue>
   : never;
 
 export type InferFieldHypertextSchema<T, FieldValue = React.ReactNode> =
-  T extends FieldHypertext
+  T extends FieldHypertext<unknown>
   ? FieldHyperTextProps<FieldValue>
-  : never
+  : never;
 
 export type InferParagraphSchema<
   T,
 > =
-  T extends FieldParagraph
+  T extends FieldParagraph<unknown>
   ? FieldParagraphProps
   : never;
 
@@ -63,7 +63,7 @@ export type InferVariant<T> =
   : never;
 
 export type InferVariantFieldSchema<T, FieldValue = React.ReactNode> =
-  T extends Field & {
+  T extends Field<unknown> & {
     variant: VariantConfig<infer TOptions>;
   }
   ? FieldProps<FieldValue> & {

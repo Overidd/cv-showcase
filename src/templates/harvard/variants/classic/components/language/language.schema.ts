@@ -16,14 +16,16 @@ export const languageSchema = {
     value: 'Idioma'
   },
 
-  item: {
-    language: {
-      display: true,
-      isChangeDisplay: true,
-      variant: defineVariant({
-        value: 'list',
-        options: ['vignette', 'list', 'progress-bar']
-      })
+  collection: {
+    item: {
+      language: {
+        display: true,
+        isChangeDisplay: true,
+        variant: defineVariant({
+          value: 'list',
+          options: ['vignette', 'list', 'progress-bar']
+        })
+      }
     }
   }
 } satisfies LanguageSchema;

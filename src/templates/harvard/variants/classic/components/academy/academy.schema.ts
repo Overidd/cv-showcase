@@ -11,30 +11,32 @@ export const academySchema = {
     isChangeDisplay: false,
   },
 
-  item: {
-    name: {
-      display: true,
-      isChangeDisplay: true,
-    },
+  collection: {
+    item: {
+      name: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    title: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      title: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    location: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      location: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    period: {
-      display: true,
-      isChangeDisplay: true
-    },
+      period: {
+        display: true,
+        isChangeDisplay: true
+      },
 
-    paragraph: {
-      display: true,
-      isChangeDisplay: true
+      paragraph: {
+        display: true,
+        isChangeDisplay: true
+      }
     }
   }
 } satisfies AcademySchema;

@@ -14,8 +14,8 @@ import {
 
 export const Project = ({
   sectionName,
-  items,
-  Item
+  collection,
+  SectionItem,
 }: ProjectProps) => {
   return (
     <section className='project'>
@@ -25,8 +25,8 @@ export const Project = ({
 
       <Separator className='separator' />
 
-      {items.map((data) => (
-        <Item
+      {collection.items.map((data) => (
+        <SectionItem
           key={data.id}
           {...data}
         />

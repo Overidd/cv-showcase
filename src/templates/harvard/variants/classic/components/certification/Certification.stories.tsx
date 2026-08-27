@@ -19,7 +19,7 @@ const meta = {
   decorators: [withHarvardTheme],
 
   argTypes: {
-    Item: {
+    SectionItem: {
       control: false,
       table: {
         disable: true,
@@ -37,43 +37,45 @@ export const baseArgsCertificationData: CertificationProps = {
     value: 'Certificaciones',
   },
 
-  Item: CertificationItem,
+  SectionItem: CertificationItem,
 
-  items: [
-    {
-      id: '1',
-      name: {
-        display: true,
-        value: 'Nombre del Certificado',
+  collection: {
+    items: [
+      {
+        id: '1',
+        name: {
+          display: true,
+          value: 'Nombre del Certificado',
+        },
+        description: {
+          display: true,
+          value: '¿Qué institución emitió el certificado y cuándo?',
+        },
       },
-      description: {
-        display: true,
-        value: '¿Qué institución emitió el certificado y cuándo?',
+      {
+        id: '2',
+        name: {
+          display: true,
+          value: 'Nombre del Certificado',
+        },
+        description: {
+          display: true,
+          value: '¿Qué institución emitió el certificado y cuándo?',
+        },
       },
-    },
-    {
-      id: '2',
-      name: {
-        display: true,
-        value: 'Nombre del Certificado',
+      {
+        id: '3',
+        name: {
+          display: true,
+          value: 'Nombre del Certificado',
+        },
+        description: {
+          display: true,
+          value: '¿Qué institución emitió el certificado y cuándo?',
+        },
       },
-      description: {
-        display: true,
-        value: '¿Qué institución emitió el certificado y cuándo?',
-      },
-    },
-    {
-      id: '3',
-      name: {
-        display: true,
-        value: 'Nombre del Certificado',
-      },
-      description: {
-        display: true,
-        value: '¿Qué institución emitió el certificado y cuándo?',
-      },
-    },
-  ],
+    ],
+  }
 };
 
 export const Default: Story = {

@@ -14,9 +14,10 @@ import type {
 
 export const Language = ({
   sectionName,
-  items,
-  Item
+  collection,
+  SectionItem,
 }: LanguageProps) => {
+
   return (
     <section className='language'>
       {sectionName.display &&
@@ -26,8 +27,8 @@ export const Language = ({
       <Separator className='separator' />
 
       <ul className='language__list'>
-        {items.map((data) => (
-          <Item
+        {collection.items.map((data) => (
+          <SectionItem
             key={data.id}
             {...data}
           />

@@ -2,39 +2,39 @@ import type {
   Field,
   FieldHypertext,
   FieldParagraph,
+  VariantConfig,
 } from '@/core/interface';
 
 import type {
-  BaseSchema
+  BaseSchema,
+  CollectionDefinition,
 } from './base.schema';
-import type React from 'react';
 
 /**
  * Representa la sección de experiencia laboral para perfiles de usuario o currículums.
  */
 export interface WorkExperienceSchema extends BaseSchema {
-  /** Nombre de la empresa u organización. */
+  collection?: CollectionDefinition<
+    VariantConfig<readonly string[]>,
+    {
+      title?: Field;
 
-  item: {
-    id?: string,
+      companyName?: Field;
 
-    title?: Field<React.ReactNode>;
+      /** Resumen o descripción general del puesto y sus responsabilidades. */
+      description?: Field;
 
-    companyName?: Field<React.ReactNode>;
+      /** Logros clave o tareas destacadas presentadas en una lista de viñetas. */
+      paragraph?: FieldParagraph;
 
-    /** Resumen o descripción general del puesto y sus responsabilidades. */
-    description?: Field<React.ReactNode>;
+      /** Ubicación geográfica o modalidad de trabajo (ej. Remoto, Presencial). */
+      location?: Field;
 
-    /** Logros clave o tareas destacadas presentadas en una lista de viñetas. */
-    paragraph?: FieldParagraph<React.ReactNode>;
+      /** Periodo de tiempo o rango de fechas del empleo. */
+      period?: Field;
 
-    /** Ubicación geográfica o modalidad de trabajo (ej. Remoto, Presencial). */
-    location?: Field<React.ReactNode>;
-
-    /** Periodo de tiempo o rango de fechas del empleo. */
-    period?: Field<React.ReactNode>;
-
-    /** Enlace externo al sitio web de la empresa o proyecto relacionado. */
-    link?: FieldHypertext<React.ReactNode>;
-  }
+      /** Enlace externo al sitio web de la empresa o proyecto relacionado. */
+      link?: FieldHypertext;
+    }
+  >;
 }

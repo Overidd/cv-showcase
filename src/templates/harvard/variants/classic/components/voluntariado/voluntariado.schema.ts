@@ -11,25 +11,27 @@ export const voluntariadoSchema = {
     isChangeDisplay: false,
   },
 
-  item: {
-    name: {
-      display: true,
-      isChangeDisplay: true,
-    },
+  collection: {
+    item: {
+      name: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    title: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      title: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    date: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      date: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    description: {
-      display: true,
-      isChangeDisplay: true,
+      description: {
+        display: true,
+        isChangeDisplay: true,
+      },
     },
   },
 } satisfies VoluntariadoSchema;

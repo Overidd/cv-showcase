@@ -19,7 +19,7 @@ const meta = {
   decorators: [withHarvardTheme],
 
   argTypes: {
-    Item: {
+    SectionItem: {
       control: false,
       table: {
         disable: true,
@@ -37,66 +37,68 @@ export const baseArgsPersonalizedData: PersonalizedProps = {
     value: 'Personalizado',
   },
 
-  group: {
+  collection: {
     variant: 'card',
+
+    items: [
+      {
+        id: '1',
+        name: {
+          display: true,
+          value: 'Título Personalizado',
+        },
+        date: {
+          display: true,
+          value: 'Período de fechas',
+        },
+        description: {
+          display: true,
+          value: 'Descripción Personalizada',
+        },
+      },
+      {
+        id: '2',
+        name: {
+          display: true,
+          value: 'Título Personalizado',
+        },
+        date: {
+          display: true,
+          value: 'Período de fechas',
+        },
+        description: {
+          display: true,
+          value: 'Descripción Personalizada',
+        },
+      },
+      {
+        id: '3',
+        name: {
+          display: true,
+          value: 'Título Personalizado',
+        },
+        date: {
+          display: true,
+          value: 'Período de fechas',
+        },
+        description: {
+          display: true,
+          value: 'Descripción Personalizada',
+        },
+      },
+    ],
   },
 
-  Item: PersonalizedItem,
+  SectionItem: PersonalizedItem,
 
-  items: [
-    {
-      id: '1',
-      name: {
-        display: true,
-        value: 'Título Personalizado',
-      },
-      date: {
-        display: true,
-        value: 'Período de fechas',
-      },
-      description: {
-        display: true,
-        value: 'Descripción Personalizada',
-      },
-    },
-    {
-      id: '2',
-      name: {
-        display: true,
-        value: 'Título Personalizado',
-      },
-      date: {
-        display: true,
-        value: 'Período de fechas',
-      },
-      description: {
-        display: true,
-        value: 'Descripción Personalizada',
-      },
-    },
-    {
-      id: '3',
-      name: {
-        display: true,
-        value: 'Título Personalizado',
-      },
-      date: {
-        display: true,
-        value: 'Período de fechas',
-      },
-      description: {
-        display: true,
-        value: 'Descripción Personalizada',
-      },
-    },
-  ],
 };
 
 export const CardVariant: Story = {
   name: 'Variante Card (Cuadrícula)',
   args: {
     ...baseArgsPersonalizedData,
-    group: {
+    collection: {
+      ...baseArgsPersonalizedData.collection,
       variant: 'card',
     },
   },
@@ -106,8 +108,10 @@ export const ListVariant: Story = {
   name: 'Variante Lista',
   args: {
     ...baseArgsPersonalizedData,
-    group: {
+    collection: {
+      ...baseArgsPersonalizedData.collection,
       variant: 'list',
     },
   },
 };
+

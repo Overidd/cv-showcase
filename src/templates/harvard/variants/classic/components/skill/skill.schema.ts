@@ -15,19 +15,21 @@ export const skillSchema = {
     isChangeDisplay: false
   },
 
-  item: {
-    name: {
-      display: true,
-      isChangeDisplay: true
-    },
+  collection: {
+    item: {
+      name: {
+        display: true,
+        isChangeDisplay: true
+      },
 
-    group: {
-      display: true,
-      isChangeDisplay: true,
-      variant: defineVariant({
-        value: 'list',
-        options: ['vignette', 'list', 'progress-bar']
-      }),
+      group: {
+        display: true,
+        isChangeDisplay: true,
+        variant: defineVariant({
+          value: 'list',
+          options: ['vignette', 'list', 'progress-bar']
+        }),
+      }
     }
   }
 

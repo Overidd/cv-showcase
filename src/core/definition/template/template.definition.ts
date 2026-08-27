@@ -22,7 +22,9 @@ export interface TemplateMetadata {
   layout: TemplateLayout;
 
   /** Configuración de cada columna. */
-  column: TemplateColumnDefinition;
+  placement: TemplateColumnDefinition;
+
+  initialSections: Array<TemplateSectionDefinition>
 }
 
 export interface TemplateSectionDefinition {
@@ -63,12 +65,4 @@ export interface TemplateDefinition {
   /** Metadatos adicionales */
   metadata: TemplateMetadata;
 
-  initialSections: Array<TemplateSectionDefinition>
-}
-
-
-export interface TemplateProps
-  extends React.HTMLAttributes<HTMLDivElement> {
-  main?: React.ReactNode;
-  sidebar?: React.ReactNode;
 }

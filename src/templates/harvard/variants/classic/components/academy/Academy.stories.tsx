@@ -14,7 +14,10 @@ import {
 import type {
   AcademyProps
 } from './academy.schema';
-import { AcademyItem } from './AcademyItem';
+
+import {
+  AcademyItem
+} from './AcademyItem';
 
 const meta = {
   title: 'Templates/Harvard/Classic/Academy',
@@ -31,7 +34,7 @@ const meta = {
   excludeStories: ['academyData'],
 
   argTypes: {
-    Item: {
+    SectionItem: {
       control: false,
       table: {
         disable: true,
@@ -50,82 +53,84 @@ export const academyData: AcademyProps = {
     value: 'Educación',
   },
 
-  Item: AcademyItem,
+  SectionItem: AcademyItem,
 
-  items: [
-    {
-      id: '1',
-      title: {
-        display: true,
-        value: 'Ingeniería de Software',
+  collection: {
+    items: [
+      {
+        id: '1',
+        title: {
+          display: true,
+          value: 'Ingeniería de Software',
+        },
+        name: {
+          display: true,
+          value: 'Universidad Nacional de Ingeniería',
+        },
+        location: {
+          display: true,
+          value: 'Lima, Perú',
+        },
+        period: {
+          display: true,
+          value: '2019 - 2024',
+        },
+        paragraph: {
+          display: true,
+          value: 'Hola mundo',
+          marker: 'all'
+        }
       },
-      name: {
-        display: true,
-        value: 'Universidad Nacional de Ingeniería',
+      {
+        id: '2',
+        title: {
+          display: true,
+          value: 'Desarrollo de Aplicaciones Web',
+        },
+        name: {
+          display: true,
+          value: 'Cibertec',
+        },
+        location: {
+          display: true,
+          value: 'Lima, Perú',
+        },
+        period: {
+          display: true,
+          value: '2017 - 2019',
+        },
+        paragraph: {
+          display: true,
+          value: 'Hola mundo',
+          marker: 'all'
+        }
       },
-      location: {
-        display: true,
-        value: 'Lima, Perú',
+      {
+        id: '3',
+        title: {
+          display: true,
+          value: 'Educación Secundaria',
+        },
+        name: {
+          display: true,
+          value: 'I.E. José María Arguedas',
+        },
+        location: {
+          display: true,
+          value: 'Cusco, Perú',
+        },
+        period: {
+          display: true,
+          value: '2012 - 2016',
+        },
+        paragraph: {
+          display: true,
+          value: 'Hola mundo',
+          marker: 'all'
+        }
       },
-      period: {
-        display: true,
-        value: '2019 - 2024',
-      },
-      paragraph: {
-        display: true,
-        value: 'Hola mundo',
-        marker: 'all'
-      }
-    },
-    {
-      id: '2',
-      title: {
-        display: true,
-        value: 'Desarrollo de Aplicaciones Web',
-      },
-      name: {
-        display: true,
-        value: 'Cibertec',
-      },
-      location: {
-        display: true,
-        value: 'Lima, Perú',
-      },
-      period: {
-        display: true,
-        value: '2017 - 2019',
-      },
-      paragraph: {
-        display: true,
-        value: 'Hola mundo',
-        marker: 'all'
-      }
-    },
-    {
-      id: '3',
-      title: {
-        display: true,
-        value: 'Educación Secundaria',
-      },
-      name: {
-        display: true,
-        value: 'I.E. José María Arguedas',
-      },
-      location: {
-        display: true,
-        value: 'Cusco, Perú',
-      },
-      period: {
-        display: true,
-        value: '2012 - 2016',
-      },
-      paragraph: {
-        display: true,
-        value: 'Hola mundo',
-        marker: 'all'
-      }
-    },
-  ],
+    ],
+  },
 };
 
 export const LongContent: Story = {

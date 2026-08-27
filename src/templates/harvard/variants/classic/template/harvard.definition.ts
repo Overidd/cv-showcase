@@ -50,22 +50,13 @@ export const harvardDefinition = {
     workExperienceDefinition
   ],
 
-  initialSections: [
-    {
-      key: 'sectionProfile',
-      order: 1,
-      row: 1,
-      column: 0,
-    },
-  ],
-
   metadata: {
     layout: {
       main: true,
       sidebar: false
     },
 
-    column: {
+    placement: {
       main: [
         'sectionAcademy',
         'sectionAchievement',
@@ -80,7 +71,16 @@ export const harvardDefinition = {
         'sectionWorkExperience',
       ],
       sidebar: []
-    }
+    },
+
+    initialSections: [
+      {
+        key: 'sectionProfile',
+        order: 1,
+        row: 1,
+        column: 0,
+      },
+    ],
   }
 
 } satisfies TemplateDefinition;

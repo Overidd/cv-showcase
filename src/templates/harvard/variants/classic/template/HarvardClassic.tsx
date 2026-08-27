@@ -2,7 +2,7 @@ import './HarvardStyle.css';
 
 import type {
   TemplateProps
-} from '@/core/definition';
+} from '@/core/props';
 
 export const HarvardClassic = ({ main, ...props }: TemplateProps) => {
   return (

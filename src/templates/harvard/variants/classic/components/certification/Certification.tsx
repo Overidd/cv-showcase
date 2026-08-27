@@ -13,10 +13,11 @@ import {
 } from '@/templates/harvard/components';
 
 export const Certification = ({
-  Item,
-  items,
+  collection,
+  SectionItem,
   sectionName,
 }: CertificationProps) => {
+
   return (
     <section className='certification'>
       {sectionName.display && (
@@ -26,8 +27,8 @@ export const Certification = ({
       <Separator className='separator' />
 
       <div className='certification__items'>
-        {items.map((data) => (
-          <Item
+        {collection.items.map((data) => (
+          <SectionItem
             key={data.id}
             {...data}
           />

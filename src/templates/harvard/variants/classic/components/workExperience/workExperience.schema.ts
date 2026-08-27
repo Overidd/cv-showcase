@@ -11,41 +11,43 @@ export const workExperienceSchema = {
     value: 'Experiencia Laboral'
   },
 
-  item: {
-    title: {
-      display: true,
-      isChangeDisplay: true,
-    },
+  collection: {
+    item: {
+      title: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    companyName: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      companyName: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    description: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      description: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    paragraph: {
-      display: true,
-      isChangeDisplay: true,
-      marker: 'circle',
-    },
+      paragraph: {
+        display: true,
+        isChangeDisplay: true,
+        marker: 'circle',
+      },
 
-    location: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      location: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    period: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      period: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    link: {
-      display: true,
-      isChangeDisplay: true,
+      link: {
+        display: true,
+        isChangeDisplay: true,
+      }
     }
   }
 } satisfies WorkExperienceSchema;

@@ -1,24 +1,22 @@
-import type React from 'react';
-
 import type {
   Field,
   FieldChildren,
   VariantConfig,
 } from '@/core/interface';
 
-//  Profile
+// Profile
 export interface ProfileSchema {
-  photo: Field & {
+  photo: Field<string> & {
     variant: VariantConfig<readonly string[]>;
   };
 
-  name: Field<React.ReactNode> & {
+  name: Field & {
     variant: VariantConfig<readonly string[]>;
   };
 
-  title: Field<React.ReactNode>;
+  title: Field;
 
-  contact: FieldChildren<React.ReactNode> & {
+  contact: FieldChildren & {
     variant?: VariantConfig<readonly string[]>;
   };
 }

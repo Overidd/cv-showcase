@@ -1,28 +1,25 @@
 import type {
   Field,
-  VariantConfig
+  VariantConfig,
 } from '@/core/interface';
 
 import type {
-  BaseSchema
+  BaseSchema,
+  CollectionDefinition,
 } from './base.schema';
-import type React from 'react';
 
 /**
  * Representa la sección de logros para perfiles de usuario o currículums.
  */
 export interface AchievementSchema extends BaseSchema {
-  group?: {
-    variant: VariantConfig<readonly string[]>;
-  };
+  collection?: CollectionDefinition<
+    VariantConfig<readonly string[]>,
+    {
+      /** Título o nombre del logro */
+      name?: Field;
 
-  item?: {
-    id?: string;
-
-    /** Título o nombre del logro */
-    name?: Field<React.ReactNode>;
-
-    /** Descripción o detalle del logro y su impacto */
-    description?: Field<React.ReactNode>;
-  };
+      /** Descripción o detalle del logro y su impacto */
+      description?: Field;
+    }
+  >;
 }

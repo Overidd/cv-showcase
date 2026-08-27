@@ -13,10 +13,11 @@ import {
 } from '@/templates/harvard/components';
 
 export const Voluntariado = ({
-  Item,
-  items,
+  collection,
+  SectionItem,
   sectionName,
 }: VoluntariadoProps) => {
+
   return (
     <section className='voluntariado'>
       {sectionName.display && (
@@ -25,8 +26,8 @@ export const Voluntariado = ({
 
       <Separator className='separator' />
 
-      {items.map((data) => (
-        <Item
+      {collection.items.map((data) => (
+        <SectionItem
           key={data.id}
           {...data}
         />

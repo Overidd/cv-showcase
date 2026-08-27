@@ -97,9 +97,7 @@ export interface SectionDefinition<
   item?: {
     component: React.ComponentType<
       TProps extends {
-        item: {
-          component: React.ComponentType<infer TItem>;
-        };
+        SectionItem: React.ComponentType<infer TItem>;
       }
       ? TItem
       : never

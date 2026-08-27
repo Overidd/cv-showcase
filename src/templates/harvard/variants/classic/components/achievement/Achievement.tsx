@@ -13,11 +13,11 @@ import {
 } from '@/templates/harvard/components';
 
 export const Achievement = ({
-  group,
-  Item,
-  items,
+  collection,
+  SectionItem,
   sectionName,
 }: AchievementProps) => {
+
   return (
     <section className='achievement'>
       {sectionName.display && (
@@ -26,9 +26,9 @@ export const Achievement = ({
 
       <Separator className='separator' />
 
-      <div className={`achievement__group achievement__group--${group.variant}`}>
-        {items.map((data) => (
-          <Item
+      <div className={`achievement__group achievement__group--${collection.variant}`}>
+        {collection.items.map((data) => (
+          <SectionItem
             key={data.id}
             {...data}
           />

@@ -14,8 +14,8 @@ import {
 
 export const WorkExperience = ({
   sectionName,
-  items,
-  Item
+  collection,
+  SectionItem,
 }: WorkExperienceProps) => {
 
   return (
@@ -27,8 +27,8 @@ export const WorkExperience = ({
 
       <Separator className='separator' />
 
-      {items.map((data) =>
-        <Item
+      {collection.items.map((data) =>
+        <SectionItem
           key={data.id}
           {...data}
         />

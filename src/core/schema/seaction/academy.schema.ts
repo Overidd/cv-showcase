@@ -1,25 +1,27 @@
 import type {
   Field,
-  FieldParagraph
+  FieldParagraph,
+  VariantConfig,
 } from '@/core/interface';
 
 import type {
-  BaseSchema
+  BaseSchema,
+  CollectionDefinition,
 } from './base.schema';
 
 export interface AcademySchema extends BaseSchema {
+  collection?: CollectionDefinition<
+    VariantConfig<readonly string[]>,
+    {
+      name?: Field;
 
-  item?: {
-    id?: string,
+      title?: Field;
 
-    name?: Field<React.ReactNode>;
+      location?: Field;
 
-    title?: Field<React.ReactNode>;
+      period?: Field;
 
-    location?: Field<React.ReactNode>;
-
-    period?: Field<React.ReactNode>;
-
-    paragraph?: FieldParagraph<React.ReactNode>;
-  }
+      paragraph?: FieldParagraph;
+    }
+  >;
 }

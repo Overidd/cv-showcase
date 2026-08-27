@@ -5,11 +5,13 @@ import type {
 } from '@/core/schema';
 
 export const sumarySchema = {
-  item: {
-    summary: {
-      display: true,
-      isChangeDisplay: false,
-      marker: 'all'
+  collection: {
+    item: {
+      summary: {
+        display: true,
+        isChangeDisplay: false,
+        marker: 'all'
+      }
     }
   }
 } satisfies SummarySchema;

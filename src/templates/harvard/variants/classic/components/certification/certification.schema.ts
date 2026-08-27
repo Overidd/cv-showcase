@@ -11,15 +11,17 @@ export const certificationSchema = {
     isChangeDisplay: false,
   },
 
-  item: {
-    name: {
-      display: true,
-      isChangeDisplay: true,
-    },
+  collection: {
+    item: {
+      name: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    description: {
-      display: true,
-      isChangeDisplay: true,
+      description: {
+        display: true,
+        isChangeDisplay: true,
+      },
     },
   },
 } satisfies CertificationSchema;

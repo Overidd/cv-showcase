@@ -1,56 +1,111 @@
 import type React from 'react';
 
-export interface TValueRange<TValue = string> {
-  value: TValue,
-  range: number,
-  label: string,
+/**
+ * Capabilities supported by a value.
+ */
+export interface ValueCapabilities {
+  formatting?: {
+    bold?: boolean;
+    italic?: boolean;
+    underline?: boolean;
+    strikethrough?: boolean;
+  };
 
-  Controller: React.ComponentType<React.PropsWithChildren>
-  // type: 'react-node' | 'date' | 'range',
+  alignment?: {
+    left?: boolean;
+    center?: boolean;
+    right?: boolean;
+    justify?: boolean;
+  };
+
+  list?: {
+    bullet?: boolean;
+    numbered?: boolean;
+  };
+
+  link?: boolean;
 }
 
-//---------------------- Base field
-export interface Field<TValue = string> {
+/**
+ * Base definition for a field.
+ */
+export interface Field<TValue = ValueCapabilities | string> {
   value?: TValue;
   display: boolean;
   isChangeDisplay: boolean;
 }
 
-export interface FieldCollection<TValue = string> {
-  values?: TValue[];
-  display: boolean;
-  isChangeDisplay: boolean;
-}
+/**
+ * Collection of field values.
+ */
+// eslint-disable-next-line @typescript-eslint/no-empty-object-type
+export interface FieldCollection<TValue = ValueCapabilities | string> extends Field<TValue[]> { }
 
-export interface FieldHypertext<TValue = string> {
-  value?: TValue;
+/**
+ * Hypertext field.
+ */
+export interface FieldHypertext<TValue = ValueCapabilities | string>
+  extends Field<TValue> {
   href?: string;
-  display: boolean;
-  isChangeDisplay: boolean;
 }
 
-// CollectionConfig
-export interface FieldParagraph<TValue = string> {
-  value?: TValue,
-  display: boolean;
-  isChangeDisplay: boolean;
-  marker?: 'bullet' | 'circle' | 'square' | 'dash' | 'arrow' | 'check' | 'diamond' | 'start' | 'icon' | 'all'
+/**
+ * Supported paragraph markers.
+ */
+export type ParagraphMarker =
+  | 'bullet'
+  | 'circle'
+  | 'square'
+  | 'dash'
+  | 'arrow'
+  | 'check'
+  | 'diamond'
+  | 'start'
+  | 'icon'
+  | 'all';
+
+/**
+ * Paragraph field.
+ */
+export interface FieldParagraph<TValue = ValueCapabilities | string>
+  extends Field<TValue> {
+  marker?: ParagraphMarker;
 }
 
-export interface FieldItemChildren<TValue = string> {
+/**
+ * Child field.
+ */
+export interface FieldItemChildren<TValue = ValueCapabilities | string>
+  extends Field<TValue> {
   key: string;
+}
+
+/**
+ * Field containing child fields.
+ */
+export interface FieldChildren<TValue = ValueCapabilities | string> {
+  display: boolean;
+  isChangeDisplay: boolean;
+  children: Array<FieldItemChildren<TValue>>;
+}
+
+/**
+ * Range value with an associated controller.
+ */
+export interface ValueRange<
+  TValue = ValueCapabilities,
+  TControllerProps = React.PropsWithChildren
+> {
   value: TValue;
-  display: boolean;
-  isChangeDisplay: boolean;
+  range: number;
+  label: string;
+  Controller: React.ComponentType<TControllerProps>;
 }
 
-export interface FieldChildren<TValue = string> {
-  display: boolean;
-  isChangeDisplay: boolean;
-
-  children: Array<FieldItemChildren<TValue>>
-}
-
+export type TValueRange<
+  TValue = ValueCapabilities,
+  TControllerProps = React.PropsWithChildren
+> = ValueRange<TValue, TControllerProps>;
 
 /**
  * Variant
@@ -75,7 +130,7 @@ export type VariantConfig<TOptions extends readonly string[]> = {
 /**
  * Campo que requiere una variante.
  */
-// export type VariantFieldConfig<TOptions extends readonly string[], TValue = string> = FieldConfig<TValue> & {
+// export type VariantFieldConfig<TOptions extends readonly string[], TValue = ValueCapabilities> = FieldConfig<TValue> & {
 //   variant: VariantConfig<TOptions>;
 // };
 

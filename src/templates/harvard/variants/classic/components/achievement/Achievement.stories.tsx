@@ -19,7 +19,7 @@ const meta = {
   decorators: [withHarvardTheme],
 
   argTypes: {
-    Item: {
+    SectionItem: {
       control: false,
       table: {
         disable: true,
@@ -37,56 +37,52 @@ export const baseArgsAchievementData: AchievementProps = {
     value: 'LOGROS CLAVE',
   },
 
-  group: {
+  SectionItem: AchievementItem,
+
+  collection: {
     variant: 'card',
+    items: [
+      {
+        id: '1',
+        name: {
+          display: true,
+          value: 'Tu logro',
+        },
+        description: {
+          display: true,
+          value: 'Describe lo que hiciste y el impacto que tuvo.',
+        },
+      },
+      {
+        id: '2',
+        name: {
+          display: true,
+          value: 'Tu logro',
+        },
+        description: {
+          display: true,
+          value: 'Describe lo que hiciste y el impacto que tuvo.',
+        },
+      },
+      {
+        id: '3',
+        name: {
+          display: true,
+          value: 'Tu logro',
+        },
+        description: {
+          display: true,
+          value: 'Describe lo que hiciste y el impacto que tuvo.',
+        },
+      },
+    ],
   },
-
-  Item: AchievementItem,
-
-  items: [
-    {
-      id: '1',
-      name: {
-        display: true,
-        value: 'Tu logro',
-      },
-      description: {
-        display: true,
-        value: 'Describe lo que hiciste y el impacto que tuvo.',
-      },
-    },
-    {
-      id: '2',
-      name: {
-        display: true,
-        value: 'Tu logro',
-      },
-      description: {
-        display: true,
-        value: 'Describe lo que hiciste y el impacto que tuvo.',
-      },
-    },
-    {
-      id: '3',
-      name: {
-        display: true,
-        value: 'Tu logro',
-      },
-      description: {
-        display: true,
-        value: 'Describe lo que hiciste y el impacto que tuvo.',
-      },
-    },
-  ],
 };
 
 export const CardVariant: Story = {
   name: 'Variante Card (Cuadrícula)',
   args: {
     ...baseArgsAchievementData,
-    group: {
-      variant: 'card',
-    },
   },
 };
 
@@ -94,8 +90,5 @@ export const ListVariant: Story = {
   name: 'Variante Lista',
   args: {
     ...baseArgsAchievementData,
-    group: {
-      variant: 'list',
-    },
   },
 };

@@ -3,55 +3,58 @@ import type React from 'react';
 import type {
   InferFieldSchema,
   InferVariant,
-  TValueRange,
+  ValueRange,
 } from '@/core/interface';
 
 import type {
   LanguageSchema,
 } from './language.schema';
 
-
 export type InferLanguageItemSchema<
   T extends LanguageSchema
 > = {
   id: string;
 } & {
-    [K in keyof NonNullable<T['item']> as K extends 'id' ? never : K]:
+    [K in keyof NonNullable<NonNullable<T['collection']>['item']> as K extends 'id' ? never : K]:
     K extends 'language'
     ? InferFieldSchema<
-      NonNullable<T['item']>[K],
-      TValueRange<React.ReactNode>
+      NonNullable<NonNullable<T['collection']>['item']>[K],
+      ValueRange<React.ReactNode>
     > & (
-      'variant' extends keyof NonNullable<T['item']>[K]
+      'variant' extends keyof NonNullable<NonNullable<T['collection']>['item']>[K]
       ? {
         variant: InferVariant<
-          NonNullable<T['item']>[K]['variant']
+          NonNullable<NonNullable<T['collection']>['item']>[K]['variant']
         >;
       }
-      : object
+      : unknown
     )
     : InferFieldSchema<
-      NonNullable<T['item']>[K]
+      NonNullable<NonNullable<T['collection']>['item']>[K]
     >;
   };
-
 
 export type InferLanguageSchema<
   T extends LanguageSchema
 > = {
-  [K in keyof T as K extends 'item' ? 'items' : K]:
+  [K in keyof T as K extends 'collection' ? never : K]:
   K extends 'sectionName'
   ? InferFieldSchema<T[K]>
-  : K extends 'title'
-  ? InferFieldSchema<T[K]>
-  : K extends 'item'
-  ? Array<InferLanguageItemSchema<T>>
   : never;
 } & (
-    T['item'] extends undefined
-    ? Record<string, never>
+    NonNullable<T['collection']> extends never | undefined
+    ? unknown
     : {
-      Item: React.ComponentType<
+      collection: {
+        items: Array<InferLanguageItemSchema<T>>;
+      } & (
+        'variant' extends keyof NonNullable<T['collection']>
+        ? {
+          variant: InferVariant<NonNullable<NonNullable<T['collection']>['variant']>>;
+        }
+        : unknown
+      );
+      SectionItem: React.ComponentType<
         InferLanguageItemSchema<T>
       >;
     }

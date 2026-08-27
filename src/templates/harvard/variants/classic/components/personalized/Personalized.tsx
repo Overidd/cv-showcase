@@ -13,9 +13,8 @@ import {
 } from '@/templates/harvard/components';
 
 export const Personalized = ({
-  group,
-  Item,
-  items,
+  collection,
+  SectionItem,
   sectionName,
 }: PersonalizedProps) => {
   return (
@@ -26,9 +25,9 @@ export const Personalized = ({
 
       <Separator className='separator' />
 
-      <div className={`personalized__group personalized__group--${group.variant}`}>
-        {items.map((data) => (
-          <Item
+      <div className={`personalized__group personalized__group--${collection.variant}`}>
+        {collection.items.map((data) => (
+          <SectionItem
             key={data.id}
             {...data}
           />

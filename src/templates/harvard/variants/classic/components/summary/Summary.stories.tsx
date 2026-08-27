@@ -19,7 +19,7 @@ const meta = {
   decorators: [withHarvardTheme],
 
   argTypes: {
-    Item: {
+    SectionItem: {
       control: false,
       table: {
         disable: true,
@@ -34,25 +34,26 @@ type Story = StoryObj<typeof meta>;
 
 
 export const baseArgsSummary: SummaryProps = {
-  Item: SummaryItem,
+  SectionItem: SummaryItem,
+  collection: {
+    items: [
+      {
+        id: 'asdasd',
+        summary: {
+          value: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum amet magnam vero. Porro dolorum numquam deleniti dolor iure. Voluptatem odit consequatur incidunt omnis itaque, reiciendis aliquam. Quasi impedit eos beatae!',
+          display: true,
+        }
 
-  items: [
-    {
-      id: 'asdasd',
-      summary: {
-        value: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Harum amet magnam vero. Porro dolorum numquam deleniti dolor iure. Voluptatem odit consequatur incidunt omnis itaque, reiciendis aliquam. Quasi impedit eos beatae!',
-        display: true,
+      },
+      {
+        id: '2',
+        summary: {
+          value: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quo, placeat adipisci perferendis incidunt saepe possimus inventore molestias ab assumenda magni atque hic at eveniet eos corrupti architecto quidem provident?',
+          display: true
+        }
       }
-
-    },
-    {
-      id: '2',
-      summary: {
-        value: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Dolorem quo, placeat adipisci perferendis incidunt saepe possimus inventore molestias ab assumenda magni atque hic at eveniet eos corrupti architecto quidem provident?',
-        display: true
-      }
-    }
-  ]
+    ]
+  }
 }
 
 export const LongContent: Story = {

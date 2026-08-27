@@ -4,7 +4,7 @@ import type {
   InferFieldCollectionSchema,
   InferFieldSchema,
   InferVariant,
-  TValueRange,
+  ValueRange,
 } from '@/core/interface';
 
 import type {
@@ -16,39 +16,46 @@ export type InferSkillItemSchema<
 > = {
   id: string;
 } & {
-    [K in keyof NonNullable<T['item']> as K extends 'id' ? never : K]:
+    [K in keyof NonNullable<NonNullable<T['collection']>['item']> as K extends 'id' ? never : K]:
     K extends 'group'
     ? InferFieldCollectionSchema<
-      NonNullable<T['item']>[K],
-      TValueRange<React.ReactNode>[]
+      NonNullable<NonNullable<T['collection']>['item']>[K],
+      ValueRange<React.ReactNode>[]
     > & (
-      'variant' extends keyof NonNullable<T['item']>[K]
+      'variant' extends keyof NonNullable<NonNullable<T['collection']>['item']>[K]
       ? {
         variant: InferVariant<
-          NonNullable<T['item']>[K]['variant']
+          NonNullable<NonNullable<T['collection']>['item']>[K]['variant']
         >;
       }
-      : object
+      : unknown
     )
     : InferFieldSchema<
-      NonNullable<T['item']>[K]
+      NonNullable<NonNullable<T['collection']>['item']>[K]
     >;
   };
 
 export type InferSkillSchema<
   T extends SkillSchema
 > = {
-  [K in keyof T as K extends 'item' ? 'items' : K]:
+  [K in keyof T as K extends 'collection' ? never : K]:
   K extends 'sectionName'
   ? InferFieldSchema<T[K]>
-  : K extends 'item'
-  ? Array<InferSkillItemSchema<T>>
   : never;
 } & (
-    T['item'] extends undefined
-    ? Record<string, never>
+    NonNullable<T['collection']> extends never | undefined
+    ? unknown
     : {
-      Item: React.ComponentType<
+      collection: {
+        items: Array<InferSkillItemSchema<T>>;
+      } & (
+        'variant' extends keyof NonNullable<T['collection']>
+        ? {
+          variant: InferVariant<NonNullable<NonNullable<T['collection']>['variant']>>;
+        }
+        : unknown
+      );
+      SectionItem: React.ComponentType<
         InferSkillItemSchema<T>
       >;
     }

@@ -15,27 +15,27 @@ export const personalizedSchema = {
     isChangeDisplay: false,
   },
 
-  group: {
+  collection: {
     variant: defineVariant({
       value: 'card',
       options: ['card', 'list', 'cart'],
     }),
-  },
 
-  item: {
-    name: {
-      display: true,
-      isChangeDisplay: true,
-    },
+    item: {
+      name: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    date: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      date: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    description: {
-      display: true,
-      isChangeDisplay: true,
+      description: {
+        display: true,
+        isChangeDisplay: true,
+      },
     },
   },
 } satisfies PersonalizedSchema;

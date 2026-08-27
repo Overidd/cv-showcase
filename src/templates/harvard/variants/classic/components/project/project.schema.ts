@@ -11,36 +11,38 @@ export const projectSchema = {
     value: 'Proyectos'
   },
 
-  item: {
-    name: {
-      display: true,
-      isChangeDisplay: true,
-    },
+  collection: {
+    item: {
+      name: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    link: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      link: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    location: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      location: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    date: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      date: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    description: {
-      display: true,
-      isChangeDisplay: true,
-    },
+      description: {
+        display: true,
+        isChangeDisplay: true,
+      },
 
-    paragraph: {
-      display: true,
-      isChangeDisplay: true,
-      marker: 'circle',
+      paragraph: {
+        display: true,
+        isChangeDisplay: true,
+        marker: 'circle',
+      }
     }
   }
 } satisfies ProjectSchema;

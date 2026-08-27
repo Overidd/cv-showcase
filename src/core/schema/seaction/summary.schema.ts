@@ -1,14 +1,18 @@
 import type {
-  BaseSchema
-} from './base.schema';
-
-import type {
   FieldParagraph,
+  VariantConfig,
 } from '@/core/interface';
 
+import type {
+  BaseSchema,
+  CollectionDefinition,
+} from './base.schema';
+
 export interface SummarySchema extends BaseSchema {
-  item?: {
-    id?: string,
-    summary?: FieldParagraph
-  }
+  collection?: CollectionDefinition<
+    VariantConfig<readonly string[]>,
+    {
+      summary?: FieldParagraph;
+    }
+  >;
 }

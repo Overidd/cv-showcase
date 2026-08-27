@@ -14,8 +14,8 @@ import type {
 
 export const Academy = ({
   sectionName,
-  items,
-  Item
+  collection,
+  SectionItem,
 }: AcademyProps) => {
 
   return (
@@ -28,8 +28,8 @@ export const Academy = ({
       <Separator className='separator' />
 
       {
-        items.map((data) => (
-          <Item
+        collection.items.map((data) => (
+          <SectionItem
             key={data.id}
             {...data}
           />

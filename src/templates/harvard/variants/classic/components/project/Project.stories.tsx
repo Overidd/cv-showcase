@@ -19,7 +19,7 @@ const meta = {
   decorators: [withHarvardTheme],
 
   argTypes: {
-    Item: {
+    SectionItem: {
       control: false,
       table: {
         disable: true,
@@ -37,79 +37,81 @@ export const baseArgsProjectData: ProjectProps = {
     value: 'Proyectos',
   },
 
-  Item: ProyectItem,
+  SectionItem: ProyectItem,
+  collection: {
 
-  items: [
-    {
-      id: '1',
-      name: {
-        display: true,
-        value: 'Nombre del Proyecto',
+    items: [
+      {
+        id: '1',
+        name: {
+          display: true,
+          value: 'Nombre del Proyecto',
+        },
+
+        link: {
+          display: true,
+          value: 'github.com/usuario/proyecto',
+          href: 'https://github.com',
+        },
+
+        location: {
+          display: true,
+          value: 'Ubicación',
+        },
+
+        date: {
+          display: true,
+          value: '2023 - 2025',
+        },
+
+        description: {
+          display: true,
+          value: 'Breve resumen de tu trabajo',
+        },
+
+        paragraph: {
+          display: true,
+          marker: 'circle',
+          value: '¿Cuál fue un resultado exitoso de tu trabajo? (por ejemplo, recaudé $3,000 para la caridad)',
+        },
       },
 
-      link: {
-        display: true,
-        value: 'github.com/usuario/proyecto',
-        href: 'https://github.com',
-      },
+      {
+        id: '2',
+        name: {
+          display: true,
+          value: 'Plataforma E-Commerce Multitienda',
+        },
 
-      location: {
-        display: true,
-        value: 'Ubicación',
-      },
+        link: {
+          display: true,
+          value: 'ecommerce-demo.com',
+          href: 'https://ecommerce-demo.com',
+        },
 
-      date: {
-        display: true,
-        value: '2023 - 2025',
-      },
+        location: {
+          display: true,
+          value: 'Remoto',
+        },
 
-      description: {
-        display: true,
-        value: 'Breve resumen de tu trabajo',
-      },
+        date: {
+          display: true,
+          value: '2023 - 2024',
+        },
 
-      paragraph: {
-        display: true,
-        marker: 'circle',
-        value: '¿Cuál fue un resultado exitoso de tu trabajo? (por ejemplo, recaudé $3,000 para la caridad)',
-      },
-    },
+        description: {
+          display: true,
+          value: 'Arquitectura y desarrollo de solución de comercio electrónico de alto rendimiento.',
+        },
 
-    {
-      id: '2',
-      name: {
-        display: true,
-        value: 'Plataforma E-Commerce Multitienda',
+        paragraph: {
+          display: true,
+          marker: 'circle',
+          value: 'Optimicé los tiempos de respuesta del checkout en un 45% y aumenté la tasa de conversión en un 20%.',
+        },
       },
-
-      link: {
-        display: true,
-        value: 'ecommerce-demo.com',
-        href: 'https://ecommerce-demo.com',
-      },
-
-      location: {
-        display: true,
-        value: 'Remoto',
-      },
-
-      date: {
-        display: true,
-        value: '2023 - 2024',
-      },
-
-      description: {
-        display: true,
-        value: 'Arquitectura y desarrollo de solución de comercio electrónico de alto rendimiento.',
-      },
-
-      paragraph: {
-        display: true,
-        marker: 'circle',
-        value: 'Optimicé los tiempos de respuesta del checkout en un 45% y aumenté la tasa de conversión en un 20%.',
-      },
-    },
-  ],
+    ],
+  }
 };
 
 export const LongContent: Story = {

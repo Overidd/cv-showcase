@@ -14,8 +14,8 @@ import type {
 
 export const Skill = ({
   sectionName,
-  items,
-  Item
+  collection,
+  SectionItem,
 }: SkillProps) => {
 
   return (
@@ -27,8 +27,8 @@ export const Skill = ({
 
       <Separator className='separator' />
 
-      {items.map((data) => (
-        <Item
+      {collection.items.map((data) => (
+        <SectionItem
           key={data.id}
           {...data}
         />

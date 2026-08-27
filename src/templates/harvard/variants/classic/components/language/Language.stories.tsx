@@ -22,7 +22,7 @@ const meta = {
   decorators: [withHarvardTheme],
 
   argTypes: {
-    Item: {
+    SectionItem: {
       control: false,
       table: {
         disable: true,
@@ -36,54 +36,56 @@ type Story = StoryObj<typeof meta>;
 
 
 export const baseArgsLenguage: LanguageProps = {
-  Item: LanguageItem,
+  SectionItem: LanguageItem,
 
   sectionName: {
     display: true,
     value: 'Idioma'
   },
 
-  items: [
-    {
-      id: '1',
-      language: {
-        display: true,
-        variant: 'progress-bar',
-        value: {
-          value: 'Español',
-          label: 'Nativo',
-          range: 100,
-          Controller: ({ children }) => <>{children}</>
+  collection: {
+    items: [
+      {
+        id: '1',
+        language: {
+          display: true,
+          variant: 'progress-bar',
+          value: {
+            value: 'Español',
+            label: 'Nativo',
+            range: 100,
+            Controller: ({ children }) => <>{children}</>
+          }
+        }
+      },
+      {
+        id: '2',
+        language: {
+          display: true,
+          variant: 'progress-bar',
+          value: {
+            value: 'Inglés',
+            label: 'Avanzado',
+            range: 85,
+            Controller: ({ children }) => <>{children}</>
+          }
+        }
+      },
+      {
+        id: '3',
+        language: {
+          display: true,
+          variant: 'progress-bar',
+          value: {
+            value: 'Portugués',
+            label: 'Intermedio',
+            range: 65,
+            Controller: ({ children }) => <>{children}</>
+          }
         }
       }
-    },
-    {
-      id: '2',
-      language: {
-        display: true,
-        variant: 'progress-bar',
-        value: {
-          value: 'Inglés',
-          label: 'Avanzado',
-          range: 85,
-          Controller: ({ children }) => <>{children}</>
-        }
-      }
-    },
-    {
-      id: '3',
-      language: {
-        display: true,
-        variant: 'progress-bar',
-        value: {
-          value: 'Portugués',
-          label: 'Intermedio',
-          range: 65,
-          Controller: ({ children }) => <>{children}</>
-        }
-      }
-    }
-  ]
+    ]
+  }
 }
 
 export const LongContent: Story = {

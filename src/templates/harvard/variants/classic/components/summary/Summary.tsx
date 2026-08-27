@@ -9,8 +9,8 @@ import type {
 } from './summary.schema';
 
 export const Summary = ({
-  items,
-  Item,
+  collection,
+  SectionItem,
 }: SummaryProps) => {
 
   return (
@@ -19,8 +19,8 @@ export const Summary = ({
     >
       <Separator className='separator' />
       {
-        items.map((data) => (
-          <Item
+        collection.items.map((data) => (
+          <SectionItem
             key={data.id}
             {...data}
           />

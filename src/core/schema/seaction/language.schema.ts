@@ -1,19 +1,21 @@
 import type {
   Field,
-  TValueRange,
-  VariantConfig
+  ValueRange,
+  VariantConfig,
 } from '@/core/interface';
 
 import type {
-  BaseSchema
+  BaseSchema,
+  CollectionDefinition,
 } from './base.schema';
 
 export interface LanguageSchema extends BaseSchema {
-  item?: {
-    id?: string,
-
-    language: Field<TValueRange<React.ReactNode>> & {
-      variant: VariantConfig<readonly string[]>;
+  collection?: CollectionDefinition<
+    VariantConfig<readonly string[]>,
+    {
+      language?: Field<ValueRange> & {
+        variant: VariantConfig<readonly string[]>;
+      };
     }
-  }
+  >;
 }
